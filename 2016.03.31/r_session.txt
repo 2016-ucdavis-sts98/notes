@@ -1,0 +1,955 @@
+
+R version 3.2.0 (2015-04-16) -- "Full of Ingredients"
+Copyright (C) 2015 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> readRDS("sts98.rds")
+Error in gzfile(file, "rb") : cannot open the connection
+In addition: Warning message:
+In gzfile(file, "rb") :
+  cannot open compressed file 'sts98.rds', probable reason 'No such file or directory'
+> getwd()
+[1] "C:/Users/Statistics/Documents"
+> setwd()
+Error in setwd() : argument "dir" is missing, with no default
+> setwd("../Desktop//Nick")
+> getwd()
+[1] "C:/Users/Statistics/Desktop/Nick"
+> setwd("archive//sts-notes/data/")
+> getwd()
+[1] "C:/Users/Statistics/Desktop/Nick/archive/sts-notes/data"
+> list.files()
+[1] "README.md" "sts98.rds"
+> readRDS("sts98.rds")
+                Class                          Major
+1            Freshman                         Design
+2            Freshman         Electrical Engineering
+3              Junior                      Economics
+4              Junior           Managerial Economics
+5              Junior              Cognitive Science
+6              Junior           Managerial Economics
+7              Junior            Applied Mathematics
+8              Junior           Managerial Economics
+9              Junior                   Anthropology
+10             Junior                      Economics
+11             Junior                        English
+12             Junior                   Anthropology
+13             Junior                      Economics
+14             Junior                      Economics
+15             Junior                      Economics
+16             Junior            Applied Mathematics
+17             Junior           Managerial Economics
+18             Junior                   Anthropology
+19             Junior                     Psychology
+20             Junior           Managerial Economics
+21             Junior                        English
+22             Junior              Political Science
+23             Junior                     Philosophy
+24             Junior      Math Analytics & Ops Rsch
+25             Junior                        English
+26             Junior        International Relations
+27             Junior                      Sociology
+28             Junior                      Sociology
+29             Junior              Human Development
+30             Junior      Math Analytics & Ops Rsch
+31             Junior                        English
+32             Junior                     Statistics
+33             Junior                  Communication
+34             Junior                        English
+35             Junior                     Statistics
+36             Junior                     Statistics
+37             Junior                     Statistics
+38             Junior  Sociology-Organizational Stds
+39             Junior                      Sociology
+40             Junior           Managerial Economics
+41 Non-Degree Seeking           University Extension
+42          Sophomore                        History
+43          Sophomore              Political Science
+44          Sophomore         Intern'l Agri Devlopmt
+45          Sophomore          Undeclared-Humanities
+46          Sophomore                      Economics
+47          Sophomore                    Mathematics
+48          Sophomore           Computer Engineering
+49          Sophomore           Managerial Economics
+50          Sophomore            Applied Mathematics
+51          Sophomore   Undeclared-Physical Sciences
+52             Senior Community and Regional Develop
+53             Senior    Environ Policy Analy & Plan
+54             Senior    Environ Policy Analy & Plan
+55             Senior           Managerial Economics
+56             Senior           Managerial Economics
+57             Senior           Managerial Economics
+58             Senior    Biochem & Molecular Biology
+59             Senior                   Cell Biology
+60             Senior           Managerial Economics
+61             Senior                     Psychology
+62             Senior           Managerial Economics
+63             Senior                     Psychology
+64             Senior           Managerial Economics
+65             Senior                      Economics
+66             Senior                        English
+67             Senior                   Anthropology
+68             Senior                   Anthropology
+69             Senior                      Economics
+70             Senior Sustainable Environmntl Design
+71             Senior        International Relations
+72             Senior                      Economics
+73             Senior         Comparative Literature
+74             Senior  Sociology-Organizational Stds
+75             Senior                        English
+76             Senior                      Economics
+77             Senior                      Economics
+78             Senior                          Music
+79             Senior                     Psychology
+80             Senior                    Mathematics
+81             Senior                      Economics
+82             Senior                      Sociology
+83             Senior                   Anthropology
+84             Senior              Political Science
+85             Senior        International Relations
+86             Senior                      Economics
+87             Senior                     Psychology
+88             Senior  Sociology-Organizational Stds
+89             Senior                        English
+90             Senior                     Psychology
+91             Senior     Political Science Publ Ser
+92             Senior         Technocultural Studies
+93             Senior              Political Science
+94             Senior         Technocultural Studies
+95             Senior     Political Science Publ Ser
+96             Senior                     Psychology
+97             Senior                        Physics
+98            Limited                     Statistics
+                                        Dept
+1                                     Design
+2          Electrical & Computer Engineering
+3                                  Economics
+4          Agricultural & Resource Economics
+5                                 Philosophy
+6          Agricultural & Resource Economics
+7                                Mathematics
+8          Agricultural & Resource Economics
+9                               Anthropology
+10                                 Economics
+11                                   English
+12                              Anthropology
+13                                 Economics
+14                                 Economics
+15                                 Economics
+16                               Mathematics
+17         Agricultural & Resource Economics
+18                              Anthropology
+19                                Psychology
+20         Agricultural & Resource Economics
+21                                   English
+22                         Political Science
+23                                Philosophy
+24                               Mathematics
+25                                   English
+26                   International Relations
+27                                 Sociology
+28                                 Sociology
+29                             Human Ecology
+30                               Mathematics
+31                                   English
+32                                Statistics
+33                             Communication
+34                                   English
+35                                Statistics
+36                                Statistics
+37                                Statistics
+38                                 Sociology
+39                                 Sociology
+40         Agricultural & Resource Economics
+41                      University Extension
+42                                   History
+43                         Political Science
+44             Human & Community Development
+45              College of Letters & Science
+46                                 Economics
+47                               Mathematics
+48         Electrical & Computer Engineering
+49         Agricultural & Resource Economics
+50                               Mathematics
+51              College of Letters & Science
+52             Human & Community Development
+53            Environmental Science & Policy
+54            Environmental Science & Policy
+55         Agricultural & Resource Economics
+56         Agricultural & Resource Economics
+57         Agricultural & Resource Economics
+58              Molecular & Cellular Biology
+59              Molecular & Cellular Biology
+60         Agricultural & Resource Economics
+61                                Psychology
+62         Agricultural & Resource Economics
+63                                Psychology
+64         Agricultural & Resource Economics
+65                                 Economics
+66                                   English
+67                              Anthropology
+68                              Anthropology
+69                                 Economics
+70                             Human Ecology
+71                   International Relations
+72                                 Economics
+73                    Comparative Literature
+74                                 Sociology
+75                                   English
+76                                 Economics
+77                                 Economics
+78                                     Music
+79                                Psychology
+80                               Mathematics
+81                                 Economics
+82                                 Sociology
+83                              Anthropology
+84                         Political Science
+85                   International Relations
+86                                 Economics
+87                                Psychology
+88                                 Sociology
+89                                   English
+90                                Psychology
+91                         Political Science
+92 Art, Art History & Technocultural Studies
+93                         Political Science
+94 Art, Art History & Technocultural Studies
+95                         Political Science
+96                                Psychology
+97                                   Physics
+98                                Statistics
+> roster = readRDS("sts98.rds")
+> roster
+                Class                          Major
+1            Freshman                         Design
+2            Freshman         Electrical Engineering
+3              Junior                      Economics
+4              Junior           Managerial Economics
+5              Junior              Cognitive Science
+6              Junior           Managerial Economics
+7              Junior            Applied Mathematics
+8              Junior           Managerial Economics
+9              Junior                   Anthropology
+10             Junior                      Economics
+11             Junior                        English
+12             Junior                   Anthropology
+13             Junior                      Economics
+14             Junior                      Economics
+15             Junior                      Economics
+16             Junior            Applied Mathematics
+17             Junior           Managerial Economics
+18             Junior                   Anthropology
+19             Junior                     Psychology
+20             Junior           Managerial Economics
+21             Junior                        English
+22             Junior              Political Science
+23             Junior                     Philosophy
+24             Junior      Math Analytics & Ops Rsch
+25             Junior                        English
+26             Junior        International Relations
+27             Junior                      Sociology
+28             Junior                      Sociology
+29             Junior              Human Development
+30             Junior      Math Analytics & Ops Rsch
+31             Junior                        English
+32             Junior                     Statistics
+33             Junior                  Communication
+34             Junior                        English
+35             Junior                     Statistics
+36             Junior                     Statistics
+37             Junior                     Statistics
+38             Junior  Sociology-Organizational Stds
+39             Junior                      Sociology
+40             Junior           Managerial Economics
+41 Non-Degree Seeking           University Extension
+42          Sophomore                        History
+43          Sophomore              Political Science
+44          Sophomore         Intern'l Agri Devlopmt
+45          Sophomore          Undeclared-Humanities
+46          Sophomore                      Economics
+47          Sophomore                    Mathematics
+48          Sophomore           Computer Engineering
+49          Sophomore           Managerial Economics
+50          Sophomore            Applied Mathematics
+51          Sophomore   Undeclared-Physical Sciences
+52             Senior Community and Regional Develop
+53             Senior    Environ Policy Analy & Plan
+54             Senior    Environ Policy Analy & Plan
+55             Senior           Managerial Economics
+56             Senior           Managerial Economics
+57             Senior           Managerial Economics
+58             Senior    Biochem & Molecular Biology
+59             Senior                   Cell Biology
+60             Senior           Managerial Economics
+61             Senior                     Psychology
+62             Senior           Managerial Economics
+63             Senior                     Psychology
+64             Senior           Managerial Economics
+65             Senior                      Economics
+66             Senior                        English
+67             Senior                   Anthropology
+68             Senior                   Anthropology
+69             Senior                      Economics
+70             Senior Sustainable Environmntl Design
+71             Senior        International Relations
+72             Senior                      Economics
+73             Senior         Comparative Literature
+74             Senior  Sociology-Organizational Stds
+75             Senior                        English
+76             Senior                      Economics
+77             Senior                      Economics
+78             Senior                          Music
+79             Senior                     Psychology
+80             Senior                    Mathematics
+81             Senior                      Economics
+82             Senior                      Sociology
+83             Senior                   Anthropology
+84             Senior              Political Science
+85             Senior        International Relations
+86             Senior                      Economics
+87             Senior                     Psychology
+88             Senior  Sociology-Organizational Stds
+89             Senior                        English
+90             Senior                     Psychology
+91             Senior     Political Science Publ Ser
+92             Senior         Technocultural Studies
+93             Senior              Political Science
+94             Senior         Technocultural Studies
+95             Senior     Political Science Publ Ser
+96             Senior                     Psychology
+97             Senior                        Physics
+98            Limited                     Statistics
+                                        Dept
+1                                     Design
+2          Electrical & Computer Engineering
+3                                  Economics
+4          Agricultural & Resource Economics
+5                                 Philosophy
+6          Agricultural & Resource Economics
+7                                Mathematics
+8          Agricultural & Resource Economics
+9                               Anthropology
+10                                 Economics
+11                                   English
+12                              Anthropology
+13                                 Economics
+14                                 Economics
+15                                 Economics
+16                               Mathematics
+17         Agricultural & Resource Economics
+18                              Anthropology
+19                                Psychology
+20         Agricultural & Resource Economics
+21                                   English
+22                         Political Science
+23                                Philosophy
+24                               Mathematics
+25                                   English
+26                   International Relations
+27                                 Sociology
+28                                 Sociology
+29                             Human Ecology
+30                               Mathematics
+31                                   English
+32                                Statistics
+33                             Communication
+34                                   English
+35                                Statistics
+36                                Statistics
+37                                Statistics
+38                                 Sociology
+39                                 Sociology
+40         Agricultural & Resource Economics
+41                      University Extension
+42                                   History
+43                         Political Science
+44             Human & Community Development
+45              College of Letters & Science
+46                                 Economics
+47                               Mathematics
+48         Electrical & Computer Engineering
+49         Agricultural & Resource Economics
+50                               Mathematics
+51              College of Letters & Science
+52             Human & Community Development
+53            Environmental Science & Policy
+54            Environmental Science & Policy
+55         Agricultural & Resource Economics
+56         Agricultural & Resource Economics
+57         Agricultural & Resource Economics
+58              Molecular & Cellular Biology
+59              Molecular & Cellular Biology
+60         Agricultural & Resource Economics
+61                                Psychology
+62         Agricultural & Resource Economics
+63                                Psychology
+64         Agricultural & Resource Economics
+65                                 Economics
+66                                   English
+67                              Anthropology
+68                              Anthropology
+69                                 Economics
+70                             Human Ecology
+71                   International Relations
+72                                 Economics
+73                    Comparative Literature
+74                                 Sociology
+75                                   English
+76                                 Economics
+77                                 Economics
+78                                     Music
+79                                Psychology
+80                               Mathematics
+81                                 Economics
+82                                 Sociology
+83                              Anthropology
+84                         Political Science
+85                   International Relations
+86                                 Economics
+87                                Psychology
+88                                 Sociology
+89                                   English
+90                                Psychology
+91                         Political Science
+92 Art, Art History & Technocultural Studies
+93                         Political Science
+94 Art, Art History & Technocultural Studies
+95                         Political Science
+96                                Psychology
+97                                   Physics
+98                                Statistics
+> head(roster)
+     Class                  Major
+1 Freshman                 Design
+2 Freshman Electrical Engineering
+3   Junior              Economics
+4   Junior   Managerial Economics
+5   Junior      Cognitive Science
+6   Junior   Managerial Economics
+                               Dept
+1                            Design
+2 Electrical & Computer Engineering
+3                         Economics
+4 Agricultural & Resource Economics
+5                        Philosophy
+6 Agricultural & Resource Economics
+> head(roster, 2)
+     Class                  Major
+1 Freshman                 Design
+2 Freshman Electrical Engineering
+                               Dept
+1                            Design
+2 Electrical & Computer Engineering
+> ?head
+> # Comments start with #
+> head(roster, 2)
+     Class                  Major
+1 Freshman                 Design
+2 Freshman Electrical Engineering
+                               Dept
+1                            Design
+2 Electrical & Computer Engineering
+> tail(roster)
+     Class                      Major
+93  Senior          Political Science
+94  Senior     Technocultural Studies
+95  Senior Political Science Publ Ser
+96  Senior                 Psychology
+97  Senior                    Physics
+98 Limited                 Statistics
+                                        Dept
+93                         Political Science
+94 Art, Art History & Technocultural Studies
+95                         Political Science
+96                                Psychology
+97                                   Physics
+98                                Statistics
+> nrow(roster)
+[1] 98
+> ncol(roster)
+[1] 3
+> dim(roster)
+[1] 98  3
+> str(roster)
+'data.frame':	98 obs. of  3 variables:
+ $ Class: Factor w/ 6 levels "Freshman","Junior",..: 1 1 2 2 2 2 2 2 2 2 ...
+ $ Major: Factor w/ 35 levels "Anthropology",..: 10 12 11 19 5 19 2 19 1 11 ...
+ $ Dept : Factor w/ 25 levels "Agricultural & Resource Economics",..: 7 9 8 1 19 1 16 1 2 8 ...
+> typeof(5)
+[1] "double"
+> typeof("hello")
+[1] "character"
+> typeof(roster)
+[1] "list"
+> c(5, 6, 7)
+[1] 5 6 7
+> typeof(c(5, 6, 7))
+[1] "double"
+> typeof(c("hello", "goodbye"))
+[1] "character"
+> typeof(c("hello", 5))
+[1] "character"
+> c("hello", 5)
+[1] "hello" "5"    
+> typeof(c("hello", 5, sin))
+[1] "list"
+> list("hello", 5)
+[[1]]
+[1] "hello"
+
+[[2]]
+[1] 5
+
+> class(rost)
+Error: object 'rost' not found
+> class(roster)
+[1] "data.frame"
+> roster
+                Class                          Major
+1            Freshman                         Design
+2            Freshman         Electrical Engineering
+3              Junior                      Economics
+4              Junior           Managerial Economics
+5              Junior              Cognitive Science
+6              Junior           Managerial Economics
+7              Junior            Applied Mathematics
+8              Junior           Managerial Economics
+9              Junior                   Anthropology
+10             Junior                      Economics
+11             Junior                        English
+12             Junior                   Anthropology
+13             Junior                      Economics
+14             Junior                      Economics
+15             Junior                      Economics
+16             Junior            Applied Mathematics
+17             Junior           Managerial Economics
+18             Junior                   Anthropology
+19             Junior                     Psychology
+20             Junior           Managerial Economics
+21             Junior                        English
+22             Junior              Political Science
+23             Junior                     Philosophy
+24             Junior      Math Analytics & Ops Rsch
+25             Junior                        English
+26             Junior        International Relations
+27             Junior                      Sociology
+28             Junior                      Sociology
+29             Junior              Human Development
+30             Junior      Math Analytics & Ops Rsch
+31             Junior                        English
+32             Junior                     Statistics
+33             Junior                  Communication
+34             Junior                        English
+35             Junior                     Statistics
+36             Junior                     Statistics
+37             Junior                     Statistics
+38             Junior  Sociology-Organizational Stds
+39             Junior                      Sociology
+40             Junior           Managerial Economics
+41 Non-Degree Seeking           University Extension
+42          Sophomore                        History
+43          Sophomore              Political Science
+44          Sophomore         Intern'l Agri Devlopmt
+45          Sophomore          Undeclared-Humanities
+46          Sophomore                      Economics
+47          Sophomore                    Mathematics
+48          Sophomore           Computer Engineering
+49          Sophomore           Managerial Economics
+50          Sophomore            Applied Mathematics
+51          Sophomore   Undeclared-Physical Sciences
+52             Senior Community and Regional Develop
+53             Senior    Environ Policy Analy & Plan
+54             Senior    Environ Policy Analy & Plan
+55             Senior           Managerial Economics
+56             Senior           Managerial Economics
+57             Senior           Managerial Economics
+58             Senior    Biochem & Molecular Biology
+59             Senior                   Cell Biology
+60             Senior           Managerial Economics
+61             Senior                     Psychology
+62             Senior           Managerial Economics
+63             Senior                     Psychology
+64             Senior           Managerial Economics
+65             Senior                      Economics
+66             Senior                        English
+67             Senior                   Anthropology
+68             Senior                   Anthropology
+69             Senior                      Economics
+70             Senior Sustainable Environmntl Design
+71             Senior        International Relations
+72             Senior                      Economics
+73             Senior         Comparative Literature
+74             Senior  Sociology-Organizational Stds
+75             Senior                        English
+76             Senior                      Economics
+77             Senior                      Economics
+78             Senior                          Music
+79             Senior                     Psychology
+80             Senior                    Mathematics
+81             Senior                      Economics
+82             Senior                      Sociology
+83             Senior                   Anthropology
+84             Senior              Political Science
+85             Senior        International Relations
+86             Senior                      Economics
+87             Senior                     Psychology
+88             Senior  Sociology-Organizational Stds
+89             Senior                        English
+90             Senior                     Psychology
+91             Senior     Political Science Publ Ser
+92             Senior         Technocultural Studies
+93             Senior              Political Science
+94             Senior         Technocultural Studies
+95             Senior     Political Science Publ Ser
+96             Senior                     Psychology
+97             Senior                        Physics
+98            Limited                     Statistics
+                                        Dept
+1                                     Design
+2          Electrical & Computer Engineering
+3                                  Economics
+4          Agricultural & Resource Economics
+5                                 Philosophy
+6          Agricultural & Resource Economics
+7                                Mathematics
+8          Agricultural & Resource Economics
+9                               Anthropology
+10                                 Economics
+11                                   English
+12                              Anthropology
+13                                 Economics
+14                                 Economics
+15                                 Economics
+16                               Mathematics
+17         Agricultural & Resource Economics
+18                              Anthropology
+19                                Psychology
+20         Agricultural & Resource Economics
+21                                   English
+22                         Political Science
+23                                Philosophy
+24                               Mathematics
+25                                   English
+26                   International Relations
+27                                 Sociology
+28                                 Sociology
+29                             Human Ecology
+30                               Mathematics
+31                                   English
+32                                Statistics
+33                             Communication
+34                                   English
+35                                Statistics
+36                                Statistics
+37                                Statistics
+38                                 Sociology
+39                                 Sociology
+40         Agricultural & Resource Economics
+41                      University Extension
+42                                   History
+43                         Political Science
+44             Human & Community Development
+45              College of Letters & Science
+46                                 Economics
+47                               Mathematics
+48         Electrical & Computer Engineering
+49         Agricultural & Resource Economics
+50                               Mathematics
+51              College of Letters & Science
+52             Human & Community Development
+53            Environmental Science & Policy
+54            Environmental Science & Policy
+55         Agricultural & Resource Economics
+56         Agricultural & Resource Economics
+57         Agricultural & Resource Economics
+58              Molecular & Cellular Biology
+59              Molecular & Cellular Biology
+60         Agricultural & Resource Economics
+61                                Psychology
+62         Agricultural & Resource Economics
+63                                Psychology
+64         Agricultural & Resource Economics
+65                                 Economics
+66                                   English
+67                              Anthropology
+68                              Anthropology
+69                                 Economics
+70                             Human Ecology
+71                   International Relations
+72                                 Economics
+73                    Comparative Literature
+74                                 Sociology
+75                                   English
+76                                 Economics
+77                                 Economics
+78                                     Music
+79                                Psychology
+80                               Mathematics
+81                                 Economics
+82                                 Sociology
+83                              Anthropology
+84                         Political Science
+85                   International Relations
+86                                 Economics
+87                                Psychology
+88                                 Sociology
+89                                   English
+90                                Psychology
+91                         Political Science
+92 Art, Art History & Technocultural Studies
+93                         Political Science
+94 Art, Art History & Technocultural Studies
+95                         Political Science
+96                                Psychology
+97                                   Physics
+98                                Statistics
+> colnames(roster)
+[1] "Class" "Major" "Dept" 
+> rownames(roster)
+ [1] "1"  "2"  "3"  "4"  "5"  "6"  "7"  "8"  "9"  "10" "11" "12"
+[13] "13" "14" "15" "16" "17" "18" "19" "20" "21" "22" "23" "24"
+[25] "25" "26" "27" "28" "29" "30" "31" "32" "33" "34" "35" "36"
+[37] "37" "38" "39" "40" "41" "42" "43" "44" "45" "46" "47" "48"
+[49] "49" "50" "51" "52" "53" "54" "55" "56" "57" "58" "59" "60"
+[61] "61" "62" "63" "64" "65" "66" "67" "68" "69" "70" "71" "72"
+[73] "73" "74" "75" "76" "77" "78" "79" "80" "81" "82" "83" "84"
+[85] "85" "86" "87" "88" "89" "90" "91" "92" "93" "94" "95" "96"
+[97] "97" "98"
+> names(roster)
+[1] "Class" "Major" "Dept" 
+> str(roster)
+'data.frame':	98 obs. of  3 variables:
+ $ Class: Factor w/ 6 levels "Freshman","Junior",..: 1 1 2 2 2 2 2 2 2 2 ...
+ $ Major: Factor w/ 35 levels "Anthropology",..: 10 12 11 19 5 19 2 19 1 11 ...
+ $ Dept : Factor w/ 25 levels "Agricultural & Resource Economics",..: 7 9 8 1 19 1 16 1 2 8 ...
+> roster$Class
+ [1] Freshman           Freshman           Junior            
+ [4] Junior             Junior             Junior            
+ [7] Junior             Junior             Junior            
+[10] Junior             Junior             Junior            
+[13] Junior             Junior             Junior            
+[16] Junior             Junior             Junior            
+[19] Junior             Junior             Junior            
+[22] Junior             Junior             Junior            
+[25] Junior             Junior             Junior            
+[28] Junior             Junior             Junior            
+[31] Junior             Junior             Junior            
+[34] Junior             Junior             Junior            
+[37] Junior             Junior             Junior            
+[40] Junior             Non-Degree Seeking Sophomore         
+[43] Sophomore          Sophomore          Sophomore         
+[46] Sophomore          Sophomore          Sophomore         
+[49] Sophomore          Sophomore          Sophomore         
+[52] Senior             Senior             Senior            
+[55] Senior             Senior             Senior            
+[58] Senior             Senior             Senior            
+[61] Senior             Senior             Senior            
+[64] Senior             Senior             Senior            
+[67] Senior             Senior             Senior            
+[70] Senior             Senior             Senior            
+[73] Senior             Senior             Senior            
+[76] Senior             Senior             Senior            
+[79] Senior             Senior             Senior            
+[82] Senior             Senior             Senior            
+[85] Senior             Senior             Senior            
+[88] Senior             Senior             Senior            
+[91] Senior             Senior             Senior            
+[94] Senior             Senior             Senior            
+[97] Senior             Limited           
+6 Levels: Freshman Junior Limited ... Sophomore
+> roster$Major
+ [1] Design                        
+ [2] Electrical Engineering        
+ [3] Economics                     
+ [4] Managerial Economics          
+ [5] Cognitive Science             
+ [6] Managerial Economics          
+ [7] Applied Mathematics           
+ [8] Managerial Economics          
+ [9] Anthropology                  
+[10] Economics                     
+[11] English                       
+[12] Anthropology                  
+[13] Economics                     
+[14] Economics                     
+[15] Economics                     
+[16] Applied Mathematics           
+[17] Managerial Economics          
+[18] Anthropology                  
+[19] Psychology                    
+[20] Managerial Economics          
+[21] English                       
+[22] Political Science             
+[23] Philosophy                    
+[24] Math Analytics & Ops Rsch     
+[25] English                       
+[26] International Relations       
+[27] Sociology                     
+[28] Sociology                     
+[29] Human Development             
+[30] Math Analytics & Ops Rsch     
+[31] English                       
+[32] Statistics                    
+[33] Communication                 
+[34] English                       
+[35] Statistics                    
+[36] Statistics                    
+[37] Statistics                    
+[38] Sociology-Organizational Stds 
+[39] Sociology                     
+[40] Managerial Economics          
+[41] University Extension          
+[42] History                       
+[43] Political Science             
+[44] Intern'l Agri Devlopmt        
+[45] Undeclared-Humanities         
+[46] Economics                     
+[47] Mathematics                   
+[48] Computer Engineering          
+[49] Managerial Economics          
+[50] Applied Mathematics           
+[51] Undeclared-Physical Sciences  
+[52] Community and Regional Develop
+[53] Environ Policy Analy & Plan   
+[54] Environ Policy Analy & Plan   
+[55] Managerial Economics          
+[56] Managerial Economics          
+[57] Managerial Economics          
+[58] Biochem & Molecular Biology   
+[59] Cell Biology                  
+[60] Managerial Economics          
+[61] Psychology                    
+[62] Managerial Economics          
+[63] Psychology                    
+[64] Managerial Economics          
+[65] Economics                     
+[66] English                       
+[67] Anthropology                  
+[68] Anthropology                  
+[69] Economics                     
+[70] Sustainable Environmntl Design
+[71] International Relations       
+[72] Economics                     
+[73] Comparative Literature        
+[74] Sociology-Organizational Stds 
+[75] English                       
+[76] Economics                     
+[77] Economics                     
+[78] Music                         
+[79] Psychology                    
+[80] Mathematics                   
+[81] Economics                     
+[82] Sociology                     
+[83] Anthropology                  
+[84] Political Science             
+[85] International Relations       
+[86] Economics                     
+[87] Psychology                    
+[88] Sociology-Organizational Stds 
+[89] English                       
+[90] Psychology                    
+[91] Political Science Publ Ser    
+[92] Technocultural Studies        
+[93] Political Science             
+[94] Technocultural Studies        
+[95] Political Science Publ Ser    
+[96] Psychology                    
+[97] Physics                       
+[98] Statistics                    
+35 Levels: Anthropology ... University Extension
+> table(roster$Class)
+
+          Freshman             Junior            Limited 
+                 2                 38                  1 
+Non-Degree Seeking             Senior          Sophomore 
+                 1                 46                 10 
+> table(roster$Major)
+
+                  Anthropology            Applied Mathematics 
+                             6                              3 
+   Biochem & Molecular Biology                   Cell Biology 
+                             1                              1 
+             Cognitive Science                  Communication 
+                             1                              1 
+Community and Regional Develop         Comparative Literature 
+                             1                              1 
+          Computer Engineering                         Design 
+                             1                              1 
+                     Economics         Electrical Engineering 
+                            13                              1 
+                       English    Environ Policy Analy & Plan 
+                             8                              2 
+                       History              Human Development 
+                             1                              1 
+       International Relations         Intern'l Agri Devlopmt 
+                             3                              1 
+          Managerial Economics      Math Analytics & Ops Rsch 
+                            13                              2 
+                   Mathematics                          Music 
+                             2                              1 
+                    Philosophy                        Physics 
+                             1                              1 
+             Political Science     Political Science Publ Ser 
+                             4                              2 
+                    Psychology                      Sociology 
+                             7                              4 
+ Sociology-Organizational Stds                     Statistics 
+                             3                              5 
+Sustainable Environmntl Design         Technocultural Studies 
+                             1                              2 
+         Undeclared-Humanities   Undeclared-Physical Sciences 
+                             1                              1 
+          University Extension 
+                             1 
+> sort(table(roster$Major))
+
+   Biochem & Molecular Biology                   Cell Biology 
+                             1                              1 
+             Cognitive Science                  Communication 
+                             1                              1 
+Community and Regional Develop         Comparative Literature 
+                             1                              1 
+          Computer Engineering                         Design 
+                             1                              1 
+        Electrical Engineering                        History 
+                             1                              1 
+             Human Development         Intern'l Agri Devlopmt 
+                             1                              1 
+                         Music                     Philosophy 
+                             1                              1 
+                       Physics Sustainable Environmntl Design 
+                             1                              1 
+         Undeclared-Humanities   Undeclared-Physical Sciences 
+                             1                              1 
+          University Extension    Environ Policy Analy & Plan 
+                             1                              2 
+     Math Analytics & Ops Rsch                    Mathematics 
+                             2                              2 
+    Political Science Publ Ser         Technocultural Studies 
+                             2                              2 
+           Applied Mathematics        International Relations 
+                             3                              3 
+ Sociology-Organizational Stds              Political Science 
+                             3                              4 
+                     Sociology                     Statistics 
+                             4                              5 
+                  Anthropology                     Psychology 
+                             6                              7 
+                       English                      Economics 
+                             8                             13 
+          Managerial Economics 
+                            13 
+>
