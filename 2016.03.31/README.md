@@ -1,7 +1,7 @@
 # STS 98 - Lecture 2016.03.31
 
-Also see the R output. These notes are just a rough outline of what we
-discussed in class; some topics may be missing.
+Also see the [R output](r_session.txt). These notes are just a rough outline of
+what we discussed in class; some topics may be missing.
 
 ## Type - What is it?
 
