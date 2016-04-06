@@ -1,7 +1,8 @@
 ## # STS 98 - Lecture 2016.04.05
 ##
-## Also see the [R output](r_session.txt). These notes are just a rough outline
-## of what we discussed in class; some topics may be missing.
+## See [notes.R](notes.R) to follow along in RStudio.
+##
+## Also see the [R input](r_session.txt) from the lecture.
 
 ## Logistics
 ## ---------
@@ -11,14 +12,12 @@
 ##
 ## The Friday 1-3 pm office hours will be in SSH 1246.
 
-
+## Inspecting Data
+## ---------------
 ## R ignores lines starting with the # symbol. These are called comments. Use
 ## comments to plan out what you're trying to do, and to explain tricky pieces
 ## of code.
 
-
-## Inspecting Data
-## ---------------
 ## Last time we looked some functions for changing R's working directory:
 ##
 ## * getwd(), setwd(), list.files()
