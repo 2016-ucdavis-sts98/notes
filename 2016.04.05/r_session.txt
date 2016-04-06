@@ -1,0 +1,128 @@
+list.dirs()
+list.files()
+setwd("sandbox/")
+getwd()
+list.files()
+list.files("data/")
+x = readRDS("data/sts98.rds")
+x
+summary(x)
+table(x$Class)
+sort(table(x$Class))
+sort(table(x$Major))
+table(x$Major, x$Class)
+ctab = table(x$Major, x$Class)
+addmargins(ctab)
+table(x$Class)
+getwd()
+setwd("..")
+getwd()
+setwd("sandbox")
+getwd()
+list.files()
+table(x$Major, x$Class)
+foozle = table(x$Major, x$Class)
+addmargins(foozle)
+foozle
+sort(table(x$Class, x$Major))
+table(x$Class, x$Major)
+table(x$Major)
+x
+y = x[1:10, ]
+y
+y = head(x, 10)
+y
+y$Class = factor(y$Class)
+y$Major = factor(y$Major)
+table(y$Class, y$Major)
+addmargins(table(y$Class, y$Major))
+list.files()
+read.csv("iris.csv")
+x = read.delim("signif.txt")
+x
+dim(x)
+colnames(x)
+head(x)
+summary(x)
+NA
+NA + 4
+str(x)
+names(x)
+table(x$INTENSITY)
+x$INTENSITY
+table(x$INTENSITY)
+table(x$INTENSITY, useNA = 'always')
+NULL
+y =
+z = NULL
+z
+NULL + 5
+typeof(NA)
+head(x$INTENSITY)
+typeof(x$INTENSITY)
+head(x$INTENSITY, 1)
+typeof(head(x$INTENSITY, 1))
+NA_integer_
+typeof(NA_integer_)
+names(x)
+tolower(names(x))
+names(x) = tolower(names(x))
+names(x)
+names(read.delim("signif.txt"))
+range(x$intensity)
+range(x$intensity, na.rm = TRUE)
+is.na(NA)
+is.na(5)
+is.na(c(NA, 4, 18, NA))
+is.na(x$intensity)
+sum(is.na(x$intensity))
+table(x$intensity, useNA = 'always')
+is.na(NA)
+is.na(5)
+is.na(c(NA, 4, 18, NA))
+nrow(x)
+nrow(x) - sum(is.na(x$intensity))
+length(x$intensity) - sum(is.na(x$intensity))
+sum(!is.na(x$intensity))
+!TRUE
+!FALSE
+!c(TRUE, FALSE, TRUE)
+table(x$country)
+x_us = subset(x, country == "USA")
+head(x_us)
+table(x_us$country)
+x_us_bc = subset(x, country == "USA" | year < 0)
+head(x_us_bc)
+subset(x_us_bc, country == "USA")
+head(subset(x_us_bc, country == "USA"))
+table(x$year)
+x$year < 0
+from_bc = x$year < 0
+sum(from_bc)
+sum(!from_bc)
+c(1, 5, 6) + c(5, 8, 2)
+c(1, 5, 6) + 1
+c(1, 5, 6) < 1
+c(1, 5, 6) < c(1, 2)
+names(x)
+x$flag_tsunami
+x_tsu = subset(x, flag_tsunami == "Tsu")
+head(x_tsu)
+TRUE | FALSE
+TRUE | TRUE
+head(x)
+subset(x, year == -2150 | country == "JORDAN")
+TRUE & FALSE
+TRUE & TRUE
+subset(x, year == -2150 & country == "JORDAN")
+c(TRUE, FALSE) | c(TRUE, FALSE)
+c(TRUE, FALSE) || c(TRUE, FALSE)
+subset(x, !(year == -2150))
+T | F
+T = 6
+T
+TRUE = 6
+rm(T)
+T
+table(x$year)
+sort(table(x$year))
