@@ -1,0 +1,195 @@
+getwd()
+setwd("sandbox/")
+list.files()
+q = read.delim("signif.txt")
+names(q) = tolower(names(q))
+quakes = q
+colnames(quakes)
+sort(q$country)
+table(sort(q$country))
+sort(table(q$country))
+?sort
+sort(table(q$country), decreasing = TRUE)
+head(sort(table(q$country), decreasing = TRUE), 5)
+range(q$year)
+china200 = subset(q, country == "CHINA" & year > 1816)
+range(china200$year)
+china200 = subset(q, country == "CHINA" & year >= 1816)
+range(china200$year)
+sort(table(china200$country))
+china200$country = factor(china200$country)
+table(china200$country)
+typeof(china200)
+class(china200)
+!FALSE
+!c(TRUE, FALSE)
+!china200
+head(!china200)
+any(china200%country != "CHINA")
+any(china200$country != "CHINA")
+colnames(china200)
+head(china200$flag_tsunami)
+head(china200$flag_tsunami, 20)
+levels(china200$flag_tsunami)
+levels(china200$flag_tsunami) = c("Quake", "Tsu")
+head(china200$flag_tsunami)
+head(china200$flag_tsunami, 20)
+5 == 6
+china200$flag_tsunami == "Tsu"
+is_tsu = china200$flag_tsunami == "Tsu"
+any(is_tsu)
+all(is_tsu)
+china200
+colnames(china200)
+cool = c("flag_tsunami", "year", "focal_depth",
+"eq_primary", "country", "latitude", "longitude")
+cool
+cool_q = subset(china200, select = cool)
+head(cool_q)
+head(cool_q = subset(china200, year >= 1916))
+head(subset(china200, year >= 1916))
+head(subset(china200, year >= 1916, select = cool))
+?subset
+1:3
+q[1:3, 1:3]
+q[1:3, 5]
+q[1:3, c(1, 5)]
+q[1:3, -1]
+head(q, 3)
+q[1:3, ]
+q[1:3]
+head(q[1:3])
+q[1:3, c("year", "flag_tsunami", "country")]
+a = c(5, 8, 2)
+a[1]
+a[2]
+a[3]
+q$country == "CHINA"
+q[[1, 1]]
+head(q, 3)
+a = list(6, 3, 1)
+a
+c(6, 3, 1)
+a[[1]]
+a[1]
+typeof(a[[1]])
+typeof(a[1])
+q = quakes
+plot(latitude ~ longitude, q)
+plot(latitude ~ longitude, q,
+main = "Worldwide Earthquakes")
+?legend
+locator(1)
+legend(-166.7, -36.5, legend = "Earthquake")
+?legend
+plot(latitude ~ longitude, q,
+main = "Worldwide Earthquakes")
+legend(-166.7, -36.5, legend = "Earthquake", pch = 1)
+plot(latitude ~ longitude, q,
+main = "Worldwide Earthquakes")
+legend(-166.7, -36.5, legend = "Earthquake", pch = 1,
+col = 2)
+plot(latitude ~ longitude, q,
+main = "Worldwide Earthquakes")
+legend(-166.7, -36.5, legend = "Earthquake", pch = 1,
+col = "blue")
+plot(latitude ~ longitude, q,
+main = "Worldwide Earthquakes")
+legend(-166.7, -36.5, legend = "Earthquake", pch = 1,
+col = "thistle")
+plot(latitude ~ longitude, q,
+main = "Worldwide Earthquakes")
+legend(-166.7, -36.5, legend = "Earthquake", pch = 1,
+col = "plum")
+colors()
+plot(latitude ~ longitude, q, col = "plum",
+main = "Worldwide Earthquakes")
+legend(-166.7, -36.5, legend = "Earthquake", pch = 1,
+col = "plum")
+?plot
+plot(latitude ~ longitude, q, col = "plum",
+main = "Worldwide Earthquakes", type = "l")
+legend(-166.7, -36.5, legend = "Earthquake", pch = 1,
+col = "plum")
+plot(latitude ~ longitude, q, col = "plum",
+main = "Worldwide Earthquakes", type = "l")
+legend(-166.7, -36.5, legend = "Earthquake",
+lty = "solid", col = "plum")
+plot(latitude ~ longitude, q, col = "plum",
+lty = "dashed",
+main = "Worldwide Earthquakes", type = "l")
+legend(-166.7, -36.5, legend = "Earthquake",
+lty = "dashed", col = "plum")
+barplot(table(q$country))
+counts = sort(table(q$country))
+barplot(counts)
+?barplot
+barplot(counts, horiz = TRUE)
+?par
+barplot(counts, horiz = TRUE, las = 1)
+barplot(head(counts, 10), horiz = TRUE, las = 1)
+barplot(tail(counts, 10), horiz = TRUE, las = 1)
+barplot(tail(counts, 10), horiz = TRUE, las = 1,
+xlim = c(0, 1000))
+dotchart(tail(counts, 10))
+dotchart(tail(counts, 10), xlim = c(0, 1000))
+dotchart(tail(counts, 10), xlim = c(0, 1000),
+ylim = c(0, 5))
+dotchart(quakes$year, counts)
+dotchart(tail(counts, 10), xlim = c(0, 1000),
+ylim = c(0, 5))
+dotchart(tail(counts, 10), xlim = c(0, 1000))
+barplot(tail(counts, 10), horiz = TRUE,
+xlim = c(0, 1000))
+barplot(tail(counts, 10), horiz = TRUE, las = 1,
+xlim = c(0, 1000))
+dotchart(tail(counts, 10), xlim = c(0, 1000))
+dotchart(tail(counts, 10), xlim = c(0, 1000),
+main = "Top Earthquakes",
+xlab = "Number of Quakes")
+top10 = tail(counts, 10)
+class(top10)
+typeof(top10)
+top10 = c(top10)
+typeof(top10)
+class(top10)
+dotchart(top10, xlim = c(0, 1000),
+main = "Top Earthquakes",
+xlab = "Number of Quakes")
+table(q$quakes, q$flag_tsunami)
+table(q$country, q$flag_tsunami)
+sort(table(q$country, q$flag_tsunami))
+tsu = table(q$country, q$flag_tsunami)
+head(tsu)
+class(tsu)
+tsu = data.frame(Quake = tsu[, 1], Tsu = tsu[, 2])
+tsu
+tsu[c(2, 1)]
+order(tsu$Quake + tsu$Tsu)
+ord = order(tsu$Quake + tsu$Tsu)
+tsu[ord, ]
+tsu = table(q$country, q$flag_tsunami)
+head(tsu)
+tsu$Tsu
+q$country
+tsu$Tsu
+tsu = data.frame(Quake = tsu[, 1], Tsu = tsu[, 2])
+tsu
+tsu$Quake
+tsu$Tsu
+head(tsu)
+tsu = table(q$country, q$flag_tsunami)
+tsu = data.frame(Quake = tsu[, 1], Tsu = tsu[, 2])
+tsu
+head(tsu)
+head(tsu[c(1)])
+head(tsu[c(2, 1)])
+tsu[c(1, 3), ]
+tsu[c(3, 1), ]
+ord = order(tsu$Quake + tsu$Tsu)
+ord
+head(tsu$Quake + tsu$Tsu, 20)
+head(tsu$Quake + tsu$Tsu, 21)
+(tsu$Quake + tsu$Tsu)[ord]
+tsu[ord, ]
+?par
