@@ -14,7 +14,7 @@
 
 q = read.delim("signif.txt")
 names(q) = tolower(names(q))
-q = quakes
+quakes = q
 
 ## Which country has the most earthquakes?
 ##
