@@ -14,8 +14,7 @@ summary(profiles$age)
 #4)What is the distribution of reported sexes?
 table(profiles$sex)
 # Make a figure describing sex in the dataset. Make it look pretty!
-dotchart(table(profiles$sex),main="Sexes in Okcupid data", 
-         xlab="number", ylab="ages",xlim=c(0,50000))
+dotchart(table(profiles$sex),main="Sexes in Okcupid data", xlab="number", ylab="ages",xlim=c(0,50000))
 
 #5) What about sexual orientation? Make a figure for this, also.  
 table(profiles$orientation)
