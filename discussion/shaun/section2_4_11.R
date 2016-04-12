@@ -21,13 +21,12 @@ table(profiles$orientation)
 dotchart(table(profiles$orientation),main="Sexual orientation",
          xlab="frequency", ylab="Orientation",mgp=c(3.7,0,1))
 #6)Do males and females tend to report as gay or bisexual at different rates? 
-# Make two tables of them.  If you can figure it out by using ?? or google, 
-# put them on the same sheet, side by side
+# Make two tables of them.  
 
 males=subset(profiles,sex=="m")
 females=subset(profiles,sex=="f")
 
-par(mfrow=c(1,1))
+
 dotchart(table(females$orientation),main="Sexual orientation of women",
          xlab="frequency" , ylab="Orientation", mgp=c(3.7,0,1))
 dotchart(table(males$orientation), main="Sexual orientation of men",
