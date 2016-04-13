@@ -1,0 +1,117 @@
+q = read.delim("signif.txt")
+names(q) = tolower(names(q))
+table(q$country, q$flag_tsunami)
+tsu = table(q$country, q$flag_tsunami)
+sort(tsu)
+1:3
+tsu[1:3, ]
+tsu[c(2, 3, 1), ]
+order(tsu$Tsu)
+class(tsu)
+class(q)
+data.frame(Quake = tsu[, 1], Tsu = tsu[, 2])
+tsu[, 1]
+tsu[, 2]
+head(tsu)
+tsu2 = data.frame(Quake = tsu[, 1], Tsu = tsu[, 2])
+class(tsu2)
+class(tsu)
+tsu = data.frame(Quake = tsu[, 1], Tsu = tsu[, 2])
+order(tsu$Tsu)
+tsu$Tsu
+order(tsu$Tsu, decreasing = TRUE)
+tsu$Tsu[order(tsu$Tsu, decreasing = TRUE)]
+tsu$Tsu[order(tsu$Tsu, decreasing)]
+tsu$Tsu[order(tsu$Tsu)]
+ord = order(tsu$Tsu)
+tsu[ord, ]
+ord = order(tsu$Tsu + tsu$Quake)
+tsu[ord, ]
+tsu = data.frame(Quake = tsu[, 1], Tsu = tsu[, 2])
+ord = order(tsu$Tsu + tsu$Quake)
+tsu[ord, ]
+tsu = tsu[ord, ]
+top10 = tail(tsu, 10)
+top10
+barplot(top10)
+tsu
+top10
+tsu = data.frame(Quake = tsu[, 1], Tsu = tsu[, 2])
+tsu = table(q$country, q$flag_tsunami)
+tsu = data.frame(Quake = tsu[, 1], Tsu = tsu[, 2])
+head(tsu)
+ord = order(tsu$Tsu + tsu$Quake)
+tsu = tsu[ord, ]
+tsu
+top10 = tail(tsu, 10)
+top10
+top10_mat = as.matrix(top10)
+top10_mat
+class(top10_mat)
+class(top10)
+barplot(top10_mat)
+top10_mat
+t(top10_mat)
+top10_mat = t(top10_mat)
+barplot(top10_mat)
+?barplot
+barplot(top10_mat, beside = T)
+locator(1)
+top10_mat
+rownames(top10_mat)
+legend(1.1, 451.6, rownames(top10_mat))
+legend(1.1, 451.6, rownames(top10_mat),
+fill = c("black", "white"))
+barplot(top10_mat, beside = T,
+main = "Earthquakes & Tsunami by Country",
+ylab = "Counts")
+legend(1.1, 451.6, rownames(top10_mat),
+fill = c("black", "white"))
+dotchart(tsus$Quake)
+dotchart(tsu$Quake)
+dotchart(top10$Quake)
+top10
+dotchart(top10$Quake, labels = rownames(top10))
+points(top10$Tsu, seq_along(top10$Tsu))
+dotchart(top10$Quake, labels = rownames(top10))
+points(top10$Tsu, seq_along(top10$Tsu))
+dotchart(top10$Quake, labels = rownames(top10),
+xlim = c(0, 600))
+points(top10$Tsu, seq_along(top10$Tsu))
+range(top10)
+dotchart(top10$Quake, labels = rownames(top10),
+xlim = c(0, 600))
+points(top10$Tsu, seq_along(top10$Tsu), pch = 12)
+?points
+top10$Tsu
+seq_along(top10$Tsu)
+dotchart(top10$Quake, labels = rownames(top10),
+xlim = c(0, 600))
+points(top10$Tsu, pch = 12)
+points(100, 1)
+points(100, 1, pch = 4, col = 'red')
+points(100, 2, pch = 4, col = "blue")
+dotchart(top10_mat)
+seq_along(top10$Tsu)
+dotchart(top10$Quake, labels = rownames(top10),
+xlim = c(0, 600))
+points(top10$Tsu, seq_along(top10$Tsu), pch = 12)
+tsu
+x = c(-2, -1, -1, -1, 0, 2, 6)
+mean(x)
+median(x)
+table(x)
+x = c(-2, -1, -1, -1, 0, 2, 6, 100)
+mean(x)
+median(x)
+sd(x)
+mean(x) + sd(x)
+mean(x) - sd(x)
+mean(x) + 3 * sd(x)
+mean(x) - 3 * sd(x)
+quantile(x)
+boxplot(x)
+x = c(-2, -1, -1, -1, 0, 2, 6)
+boxplot(x)
+?quantile
+quantile(x)
