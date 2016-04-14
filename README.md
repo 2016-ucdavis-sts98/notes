@@ -7,6 +7,7 @@ Important links:
 
 * [Syllabus](syllabus.pdf)
 * [Git Guide](git_guide.pdf)
+* [Graphics Guide](graphics_guide.md)
 * [Piazza](https://piazza.com/ucdavis/spring2016/sts98)
 * [Rubric](rubric.pdf)
 
