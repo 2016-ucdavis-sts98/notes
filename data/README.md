@@ -8,6 +8,7 @@ lecture. If a file name is listed, the data set is included in this repository.
 * [NOAA Significant Earthquakes][quakes] (look for the "Download" link)
 * `noaa_daily.csv`: NOAA Climate Data Online daily summaries for several
   different cities ([source][NOAA CDO]).
+* `dogs.csv`: made-up "toy" data about dogs
 
 [quakes]: http://www.ngdc.noaa.gov/nndc/struts/form?t=101650&s=1&d=1
 [NOAA CDO]: http://www.ncdc.noaa.gov/cdo-web/
