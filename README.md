@@ -22,7 +22,9 @@ Day | Notes                             | Topics
 3   | [2016.04.05](lecture/2016.04.05/) | Loading Data, Missing Values, Subsets
 4   | [2016.04.07](lecture/2016.04.07/) | Subsets, Bar/Dot Plots
 5   | [2016.04.12](lecture/2016.04.12/) | Sorting, Statistics, Box Plots
-6   | 2016.04.14                        | Histograms, Density Plots, Factors
+6   | [2016.04.14](lecture/2016.04.14/) | Histograms, Density Plots
+7   | [2016.04.19](lecture/2016.04.19/) | Guest Speaker: Tim McCarthy
+8   | [2016.04.21](lecture/2016.04.21/) |
 
 
 
