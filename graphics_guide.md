@@ -25,6 +25,28 @@
   even misrepresent the data by hiding how many points are present. Use a
   smooth scatter plot or jitter the points to deal with overplotting.
 
+* For side-by-side plots, use the same axis scales for both plots so that
+  comparing them is not deceptive.
+
+What plot is appropriate?
+
+Variable    | Versus      | Plot
+----------- | ----------- | ----
+numerical   |             | box, histogram, density
+categorical |             | bar, dot
+categorical | categorical | mosaic, bar, dot
+numerical   | categorical | box,  density
+numerical   | numerical   | scatter, smooth scatter, line
+
+If you want to add:
+
+* 3rd numerical variable, use it to change point/line sizes.
+
+* 3rd categorical variable, use it to change point/line styles.
+
+* 4th categorical variable, use side-by-side plots.
+
+
 ## Base R Graphics
 
 Before plotting, use `par()` to change general plot settings. Many of the
@@ -60,3 +82,32 @@ legend() | add legends to a plot
 title()  | add title or labels to a plot
 axis()   | add axes to a plot
 
+## Lattice Graphics
+
+Lattice has plotting functions similar to R's built-in plotting functions.
+
+R Built-in      | Lattice
+----------      | -------
+plot()          | xyplot()
+barplot()       | barchart()
+dotchart()      | dotplot()
+boxplot()       | bwplot()
+hist()          | histogram()
+plot(density()) | densityplot()
+
+All of the lattice functions use formula notation:
+
+    y ~ x | group
+
+The "group" in the formula makes side-by-side plots, with one for each group.
+Sometimes side-by-side plots are called _faceted_ plots.
+
+The lattice functions also a have a separate groups parameter for marking
+groups within a single plot.
+
+Setting the `auto.key` parameter to `TRUE` tells lattice to add a legend.
+
+It's possible to use both groupings at once.
+
+The drawback of lattice is that LATTICE DOES NOT WORK WITH THE BUILT-IN
+PLOTTING FUNCTIONS!!!
