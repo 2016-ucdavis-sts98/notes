@@ -1,0 +1,143 @@
+x = c("Cat", "Dog", "Ferret", "Iguana", "Cat")
+x = factor(x)
+x
+levels(x)
+levels(x) = c("Cat", "Dog", "Other", "Other")
+x
+list.files()
+w = read.csv("data/noaa_daily.csv")
+head(w)
+davis = subset(w, station == "Davis, CA")
+dv = subset(w, station == "Death Valley, CA")
+plot(tmax ~ date, davis, type = 'l')
+plot(tmax ~ date, davis, type = 'l')
+typeof(davis$date)
+class(davis$date)
+d = as.Date(w$date)
+head(d)
+head(w$date)
+class(d)
+w$date = d
+davis = subset(w, station == "Davis, CA")
+dv = subset(w, station == "Death Valley, CA")
+class(davis$date)
+plot(tmax ~ date, davis, type = 'l')
+as.Date("January 29, 2015", "%B %d, %Y")
+as.Date("01292015", "%m%d%Y")
+x = c("Dec 13, 98", "Dec 12, 99", "Jan 1, 16")
+as.Date(x, "%b %d, %y")
+class(x)
+class(as.Date(x, "%b %d, %y"))
+y = as.Date(x, "%b %d, %y")
+y
+y[2] - y[1]
+as.Date("01%13%3013", "%m%%%d%%%Y")
+plot(tmax ~ date, davis, type = 'l')
+lines(davis$date, davis$tmax, lty = "dashed", col = "blue")
+plot(tmax ~ date, davis, type = 'l')
+lines(dv$date, dv$tmax, lty = "dashed", col = "blue")
+range(davis$tmax, dv$tmax)
+range(davis$tmax, dv$tmax, na.rm = T)
+r = range(davis$tmax, dv$tmax, na.rm = T)
+plot(tmax ~ date, davis, type = 'l', ylim = r)
+lines(dv$date, dv$tmax, lty = "dashed", col = "blue")
+plot(tmax ~ date, davis, type = 'l', ylim = r,
+main = "Max Temp for Davis & Death Valley")
+plot(tmax ~ date, davis, type = 'l', ylim = r,
+main = "Max Temp for Davis & Death Valley",
+ylab = "Max Temp (F)")
+lines(dv$date, dv$tmax, lty = "dashed", col = "blue")
+locator(1)
+legend("bottomleft", c("Davis", "Death Valley"),
+lty = c("solid", "dashed"), col = c("black", "blue"))
+legend("bottomleft", c("Davis", "Death Valley"),
+lty = c("solid", "dashed"), col = c("black", "blue"),
+cex = 2)
+legend("bottomleft", c("Davis", "Death Valley"),
+lty = c("solid", "dashed"), col = c("black", "blue"),
+cex = 0.5)
+plot(tmax ~ date, davis, type = 'l', ylim = r,
+main = "Max Temp for Davis & Death Valley",
+ylab = "Max Temp (F)")
+lines(dv$date, dv$tmax, lty = "dashed", col = "blue")
+legend("bottomleft", c("Davis", "Death Valley"),
+lty = c("solid", "dashed"), col = c("black", "blue"),
+cex = 0.5)
+seq(1, 10)
+seq(1, 10, 4)
+seq(as.Date("2013-01-01"), as.Date("2016-12-31"))
+seq(as.Date("2013-01-01"), as.Date("2016-12-31"), "month")
+at =
+seq(as.Date("2013-01-01"), as.Date("2016-12-31"), "month")
+?axis
+axis(1, at, labels = FALSE)
+axis(1, at)
+axis(1, at, as.character(at))
+plot(tmax ~ date, davis, type = 'l', ylim = r,
+main = "Max Temp for Davis & Death Valley",
+ylab = "Max Temp (F)")
+lines(dv$date, dv$tmax, lty = "dashed", col = "blue")
+legend("bottomleft", c("Davis", "Death Valley"),
+lty = c("solid", "dashed"), col = c("black", "blue"),
+cex = 0.5)
+axis(1, at, as.character(at))
+plot(tmax ~ date, davis, type = 'l', ylim = r,
+main = "Max Temp for Davis & Death Valley",
+ylab = "Max Temp (F)", xaxt = 'n')
+lines(dv$date, dv$tmax, lty = "dashed", col = "blue")
+legend("bottomleft", c("Davis", "Death Valley"),
+lty = c("solid", "dashed"), col = c("black", "blue"),
+cex = 0.5)
+axis(1, at, as.character(at))
+at =
+seq(as.Date("2013-01-01"), as.Date("2016-12-31"), "quarter")
+at
+plot(tmax ~ date, davis, type = 'l', ylim = r,
+main = "Max Temp for Davis & Death Valley",
+ylab = "Max Temp (F)", xaxt = 'n')
+lines(dv$date, dv$tmax, lty = "dashed", col = "blue")
+legend("bottomleft", c("Davis", "Death Valley"),
+lty = c("solid", "dashed"), col = c("black", "blue"),
+cex = 0.5)
+at =
+seq(as.Date("2013-01-01"), as.Date("2016-12-31"), "quarter")
+axis(1, at, as.character(at))
+at
+unclass(at)
+at[1] - 15706
+sd(davis$tmax)
+sd(dv$tmax)
+sd(dv$tmax, na.rm = T)
+head(w)
+plot(awnd ~ tmax, w)
+smoothScatter(w$tmax, w$awnd)
+w$temp = with(w, (tmax + tmin) / 2)
+w$temp_cat =
+cut(w$temp, c(-Inf, 32, 68, 80, Inf),
+c("Freezing", "Cold", "Nice", "Hot"))
+table(w$temp_cat)
+table(w$station, w$temp_cat)
+tab = table(w$station, w$temp_cat)
+mosaicplot(tab)
+head(w)
+mosaicplot(temp_cat ~ station, w)
+mosaicplot(station ~ temp_cat, w)
+install.packages("RColorBrewer")
+library("RColorBrewer")
+?RColorBrewer
+?brewer.pal
+brewer.pal(3, "RdPu")
+brewer.pal(1, "RdPu")
+brewer.pal(3, "RdPu")
+rdpu = brewer.pal(3, "RdPu")
+rdpu[3]
+plot(tmax ~ date, davis, col = rdpu[3])
+plot(tmax ~ date, davis, col = rdpu[2])
+library(lattice)
+xyplot(tmax ~ date | station, w, type = 'l')
+xyplot(tmax ~ date, w, groups = station)
+xyplot(tmax ~ date, w, groups = station, type = 'l')
+xyplot(tmax ~ date, w, groups = station, type = 'l',
+auto.key = T)
+xyplot(tmax ~ date | country, w, groups = station,
+type = 'l')
