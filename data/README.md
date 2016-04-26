@@ -8,7 +8,7 @@ lecture. If a file name is listed, the data set is included in this repository.
 * [NOAA Significant Earthquakes][quakes] (look for the "Download" link)
 * `noaa_daily.csv`: NOAA Climate Data Online daily summaries for several
   different cities ([source][NOAA CDO]).
-* `dogs.csv`: made-up "toy" data about dogs
+* `dogs.rds`: made-up "toy" data about dogs
 * [FiveThirtyEight data sets][FiveThirtyEightData] behind the articles at
   [FiveThirtyEight][] (use git to clone the repository)
 
