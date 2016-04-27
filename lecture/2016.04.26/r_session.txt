@@ -1,0 +1,196 @@
+list.files()
+w = read.csv("data/noaa_daily.csv")
+dogs = readRDS("data/dogs.rds")
+dogs
+table(dogs$breed)
+dotplot(table(dogs$breed))
+dotchart(table(dogs$breed))
+dotchart(as.numeric(table(dogs$breed)))
+x11()
+dotchart(as.numeric(table(dogs$breed)))
+dev.off()
+dotchart(as.numeric(table(dogs$breed)))
+dotchart(as.numeric(table(dogs$breed)))
+mar = par("mar")
+par(mar = 0)
+par(mar = rep(0, 4))
+dotchart(as.numeric(table(dogs$breed)))
+par(mar = rep(2, 4))
+dotchart(as.numeric(table(dogs$breed)))
+dotchart(c(table(dogs$breed)))
+tab = c(table(dogs$breed))
+names(tab)
+names(tab) = c("X", "Y", "Z")
+dotchart(tab)
+dogs = readRDS("data/dogs.rds")
+dogs
+table(dogs$breed)
+tab = table(dogs$breed)
+dotchart(tab)
+tab = c(table(dogs$breed))
+tab
+dotchart(tab)
+mar = par("mar")
+mar
+par(mar = c(2, 2, 2, 2))
+dotchart(tab)
+dotchart(tab, yaxt = 'n')
+tab
+names(tab) = c("Tiny Dog", "Happy Dog", "Fluffy Dog")
+tab
+dotchart(tab)
+names(tab) = NA
+tab
+dotchart(tab)
+w = read.csv("data/noaa_daily.csv")
+head(w)
+san = subset(w, station == "San Diego, CA")
+mean(san$tmax)
+dogs
+split(dogs, dogs$breed)
+spl = split(dogs, dogs$breed)
+spl$Poodle
+spl_w = split(w, w$station)
+names(spl_w)
+spl_w$Barcelona
+head(spl_w$Barcelona)
+names(spl_w)
+spl_w$Honolulu, HI
+spl_w$"Honolulu, HI"
+temps = split(w$tmax, w$station)
+names(temps)
+sapply(temps, mean)
+sapply(temps, mean, na.rm = T)
+5 / 0
+names(spl_w)
+sapply(spl_w, head)
+head(spl_w$Barcelona)
+spl
+unsplit(spl, dogs$breed)
+function(x) x^2
+sq = function(x) x^2
+sq(2)
+sq(x = 3)
+sq(y = 10)
+sq()
+to_celsius = function(farenheit) {
+celsius = (farenheit - 32) * (5 / 9)
+celsius
+}
+to_celsius(76)
+to_celsius(90)
+to_celsius = function(farenheit) {
+celsius = (farenheit - 32) * (5 / 9)
+return(celsius)
+"Farenheit is cooler than celsius!"
+}
+to_celsius(32)
+to_celsius = function(farenheit) {
+(farenheit - 32) * (5 / 9)
+}
+to_celsius(32)
+sin(c(1, 2, 3))
+to_celsius(c(76, 32, 90))
+sq()
+sq = function(x = 9) x^2
+sq()
+sq(2)
+pct_diff = function(x, ref) {
+diff = x - ref
+diff / ref
+}
+pct_diff(3, 2)
+pct_diff = function(x, ref = 10) {
+diff = x - ref
+diff / ref
+}
+pct_diff(3)
+sq(y = 10)
+third = function(a, b, c, d, e) {
+c
+}
+third(1, 2, 3, 4, 5)
+third(c = -5, a = 1, b = 7, d = 10, e = 9)
+third(1, 2, 3, e = 4, d = 5)
+big_river = "none"
+davis = function() {
+big_river = "putah creek"
+big_river
+}
+davis()
+needles = function() {
+big_river
+}
+needles()
+las_vegas = function() {
+casino
+}
+las_vegas()
+davis = function(big_river = "putah creek") {
+big_river
+}
+davis()
+davis("oh no the sac river levy flooded")
+davis = function() {
+grocery = "Nugget"
+grocery
+}
+davis()
+grocery
+dogs
+x = c(3, 2, 4)
+sin(x)
+lapply(x, sin)
+spl
+standardized_speed = function(x) {
+mean(x$speed / x$age)
+}
+spl$Poodle
+standardized_speed(spl$Poodle)
+lapply(spl, standardized_speed)
+dogs
+standardized_speed = function(x) {
+mean(x$speed / x$age, na.rm = T)
+}
+lapply(spl, standardized_speed)
+typeof(dogs)
+dogs
+lapply(dogs, class)
+lapply(dogs, sd)
+lapply(dogs[1:2], sd)
+lapply(dogs[1:2], sd, na.rm = T)
+standardized_speed = function(x, mult = 1) {
+mean(x$speed / x$age, na.rm = T) * mult
+}
+lapply(spl, standardized_speed)
+lapply(spl, standardized_speed, 100)
+lapply(dogs[1:2], sd)
+sapply(dogs[1:2], sd)
+spl_sex = split(dogs, dogs$sex)
+spl_sex
+sapply(spl_sex, mean)
+spl_sex = split(dogs$speed, dogs$sex)
+sapply(spl_sex, mean)
+by_station = split(w$tmax, w$station)
+sapply(by_station, mean)
+sapply(by_station, mean, na.rm = T)
+tapply(w$tmax, w$station, mean, na.rm = T)
+foo = function(x, y) {
+(x - y) / (x + y)
+}
+foo(2, 3)
+x = c(1, 2, 3, 4)
+y = c(5, 7, 9, 8)
+a = c(1, 2, 3, 4)
+b = c(5, 7, 9, 8)
+mapply(foo, a, b)
+foo(1, 5)
+foo(2, 7)
+tapply(w$tmax, w$station, mean, na.rm = T)
+aggregate(w$tmax, w$station, mean)
+?aggregate
+aggregate(w$tmax, list(w$station), mean)
+spl$Poodle
+poodle = spl$Poodle
+poodle$speed / poodle$age
+mean(poodle$speed / poodle$age)
