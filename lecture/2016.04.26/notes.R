@@ -1,4 +1,4 @@
-## # STS 98 - Lecture 2016.04.05
+## # STS 98 - Lecture 2016.04.26
 ##
 ## See [notes.R](notes.R) to follow along in RStudio.
 ##
