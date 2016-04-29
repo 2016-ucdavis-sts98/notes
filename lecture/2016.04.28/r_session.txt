@@ -1,0 +1,72 @@
+x = 5
+x
+sum(4, 5)
+5 + 5
+"+"(5, 5)
+c(1, 2, 3)
+sin(c(3, 2, 4))
+sum(c(3, 2, 4))
+c(3, 2, 4) + c(9, 4, 7)
+dogs = readRDS("data/dogs.rds")
+dogs
+dogs$age
+dogs$"breed"
+dogs$bre
+dogs[["breed"]]
+dogs[[1]]
+subset(dogs, TRUE)
+subset(dogs, FALSE)
+subset(dogs, age > 10)
+dogs$age > 10
+subset(dogs, age > 10, c("age", "breed"))
+dogs[dogs$age > 10, ]
+dogs[dogs$age > 10, c("age", "breed")]
+dogs
+dogs[dogs$age > 10, -3]
+dogs[1]
+dogs[ , c(1, 2)]
+dogs[1]
+dogs[[1]]
+class(dogs[1])
+class(dogs[[1]])
+dogs
+subset(dogs, age < 10 & breed == "Chihuahua")
+subset(dogs, age < 10 | breed == "Chihuahua")
+subset(dogs, breed != "Chihuauha")
+subset(dogs, breed != "Chihuahua")
+dogs$is_tiny_dog = breed == "Chihuahua"
+dogs$is_tiny_dog = dogs$breed == "Chihuahua"
+dogs
+subset(dogs, !is_tiny_dog)
+any(dogs$breed == "Chihuahua")
+any(dogs$breed == "Golden Retriever")
+all(dogs$breed == "Chihuahua")
+tiny_dogs = subset(dogs, is_tiny_dog)
+all(tiny_dogs$breed == "Chihuahua")
+table(dogs$breed)
+x = c(3, 4, 7)
+mean(x)
+median(x)
+mean(c(x, 100))
+median(c(x, 100))
+IQR(x)
+x
+IQR(x)
+quantiles(x)
+quantile(x)
+dogs
+mosaicplot(breed ~ sex, dogs)
+tab = table(dogs$breed, dogs$sex)
+tab
+barplot(tab)
+barplot(tab, beside = T)
+x
+boxplot(c(x, 100))
+boxplot(c(x, 3, 6, 7, 8, 1, 3, 5, 100))
+histogram(dogs$age)
+hist(dogs$age)
+plot(density(dogs$age))
+dogs
+plot(density(dogs$speed))
+mar = par("mar")
+mar
