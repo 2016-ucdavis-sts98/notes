@@ -1,0 +1,139 @@
+v = readRDS("cl_vehicles.rds")
+names(v)
+head(v[-2])
+v[1, 2]
+library("maps")
+map()
+?mpa
+?map
+map("state")
+map("county")
+map("state", "California")
+map("county", "Sacramento")
+map("county", namesonly = TRUE, plot = FALSE)
+map("county", "california,sacramento")
+map("county")
+map("county", "california")
+map.text("county", "california")
+map.text("county", "california")
+map.text("county", "california")
+map("county")
+map.text("county", "california", add = TRUE)
+map("state")
+points(v$longitude, v$latitude)
+map("county", "california")
+point(v$longitude, v$latitude)
+map("county", "california")
+points(v$longitude, v$latitude)
+map("county", "california")
+smoothScatter(v$longitude, v$latitude, add = TRUE)
+map("county", "california", add = TRUE)
+?smoothScatter
+map("county", "california")
+smoothScatter(v$longitude, v$latitude, 1000, add = TRUE)
+map("county", "california", add = TRUE)
+map("county", "california,san francisco")
+map("county", c("california,san francisco", "california,san mateo"))
+paste("hello", "world")
+paste("hello", "world", ",")
+paste("hello", "world", sep = ",")
+sfbay_counties = c("san francisco", "san mateo", "marin", "alameda",
+"contra costa", "napa", "sonoma", "santa clara",
+"solano", "yolo", "sacramento")
+paste("california", sfbay_counties, sep = ",")
+sfbay = paste("california", sfbay_counties, sep = ",")
+map("county", sfbay)
+smoothScatter(v$longitude, v$latitude, 1000, add = TRUE)
+map("county", sfbay, add = TRUE)
+map("county", sfbay)
+smoothScatter(v$longitude, v$latitude, 3000, add = TRUE)
+map("county", sfbay, add = TRUE)
+nrow(v)
+by_county = split(v$price, v$shp_county)
+sapply(by_county, mean, na.rm = TRUE)
+lapply(by_county, mean, na.rm = TRUE)
+tapply(v$price, v$shp_county, mean, na.rm = TRUE)
+map("county", sfbay)
+map("county", sfbay, fill = TRUE, col = c("red", "blue"))
+map("county", sfbay, namesonly = TRUE, plot = FALSE)
+counties = map("county", sfbay, namesonly = TRUE, plot = FALSE)
+prices = tapply(v$price, v$shp_county, mean, na.rm = TRUE)
+prices
+names(prices)
+v$map_region = paste(v$shp_state, v$shp_county, sep = ",")
+head(v$map_region)
+counties
+tolower("HELLO world")
+v$map_region = tolower(v$map_region)
+head(v$map_region)
+prices = tapply(v$price, v$map_region, mean, na.rm = TRUE)
+prices
+counties
+prices[counties]
+prices = prices[counties]
+map("county", sfbay, fill = TRUE, col = prices)
+cut(prices, 4)
+?cut
+cut(prices, 4, dig.lab = 10)
+price_cat = cut(prices, 4, dig.lab = 10)
+map("county", sfbay, fill = TRUE, col = 0)
+map("county", sfbay, fill = TRUE, col = 1)
+map("county", sfbay, fill = TRUE, col = 2)
+typeof(price_cat)
+levels(price_cat)
+map("county", sfbay, fill = TRUE, col = price_cat)
+legend("bottomleft", levels(price_cat), 1:4, cex = 2)
+legend("bottomleft", levels(price_cat), fill = 1:4, cex = 2)
+legend("bottomleft", levels(price_cat), fill = 1:4, cex = 1)
+map("county", sfbay, fill = TRUE, col = price_cat)
+legend("bottomleft", levels(price_cat), fill = 1:4, cex = 1)
+unclass(price_cat)
+library("viridis")
+viridis(4)
+pal = viridis(4)
+pal[price_cat]
+price_cat
+map("county", sfbay, fill = TRUE, col = pal[price_cat])
+pal = magma(4)
+map("county", sfbay, fill = TRUE, col = pal[price_cat])
+legend("bottomleft", levels(price_cat), fill = pal, cex = 1)
+?identify.map
+price_cat
+names(price_cat) = sfbay
+price_cat
+levels(price_cat) = c("cheap", "mid-cheap", "mid-expensive", "expensive")
+price_cat
+pal
+pal[price_cat]
+colors = pal[price_cat]
+names(colors) = sfbay
+colors
+price_cat
+library("RgoogleMaps")
+m = GetMap(c(37.78, -122.42), zoom = 8)
+PlotOnStaticMap(m)
+PlotOnStaticMap(m, v$longitude, v$latitude)
+?PlotOnStaticMap
+PlotOnStaticMap(m, v$latitude, v$longitude)
+PlotOnStaticMap(m, v$latitude, v$longitude, cex.pch = 0.5)
+?par
+PlotOnStaticMap(m, v$latitude, v$longitude, cex = 0.5)
+PlotOnStaticMap(m, v$latitude, v$longitude, cex = 0.25)
+PlotOnStaticMap(m, v$latitude, v$longitude, cex = 0.15)
+class(v$map_region)
+v$map_region_cat = factor(v$map_region)
+levels(v$map_region)
+levels(v$map_region_cat)
+sfbay
+sf_v = subset(v, map_region %in% sfbay)
+sf_v$map_region_cat = factor(sf_v$map_region)
+levels(sf_v$map_region_cat)
+pal = viridis(11)
+sf_v$color = pal[sf_v$map_region_cat]
+PlotOnStaticMap(m, v$latitude, v$longitude, cex = 0.15, col = sf_v$color)
+PlotOnStaticMap(m, v$latitude, v$longitude, cex = 1, col = sf_v$color)
+PlotOnStaticMap(m, sf_v$latitude, sf_v$longitude, cex = 1, col = sf_v$color)
+par("mar")
+par(mar = c(5.1, 4.1, 4.1, 2.1))
+?par
+?map
