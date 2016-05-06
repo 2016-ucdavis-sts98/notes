@@ -11,6 +11,11 @@ Important links:
 * [Piazza](https://piazza.com/ucdavis/spring2016/sts98)
 * [Rubric](rubric.pdf)
 
+Package Documentation:
+
+* [Viridis](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html)
+* [cartography](https://cran.r-project.org/web/packages/cartography/vignettes/cartography.html)
+
 For links to specific assignments, see Piazza.
 
 Lecture Notes:
