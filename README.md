@@ -28,6 +28,8 @@ Day | Notes                             | Topics
 9   | [April 26](lecture/2016.04.26/)   | Functions, Scope, Apply Functions
 10  | [April 28](lecture/2016.04.28/)   | Review
 11  | ---                               | Midterm
+12  | [May 5](lecture/2016.05.05/)      | Maps
+13  | May 10                            | 
 
 
 
