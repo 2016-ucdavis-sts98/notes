@@ -20,21 +20,21 @@ lecture. If a file name is listed, the data set is included in this repository.
   posts were downloaded May 4th, 2016 and include variables similar to those in
   the Craigslist apartment data set.
 
-*   US Census Bureau shape files:
+*   US Census Bureau shape files, in the `maps/` directory:
 
-    + [shp_urban.rds](http://anson.ucdavis.edu/~nulle/shp_urban.rds)
-    + [shp_city.rds](http://anson.ucdavis.edu/~nulle/shp_city.rds)
-    + [shp_place.rds](http://anson.ucdavis.edu/~nulle/shp_place.rds)
+    + `shp_county.rds`
+    + `shp_place.rds`
+    + `shp_urban.rds`
 
-    These can be used to make maps that show census-designated urban areas,
-    cities, and places. Use them with the built-in state and county maps in
-    the maps package. To get started, try
+    These can be used to make maps that show census-designated urban areas and
+    places. The counties file has more accurate county borders. To get started,
+    try
 
     ```r
-    cities = readRDS("shp_city.rds")
+    county = readRDS("shp_county.rds")
 
     library("maps")
-    map(cities)
+    map(county)
     ```
 
 [quakes]: http://www.ngdc.noaa.gov/nndc/struts/form?t=101650&s=1&d=1
