@@ -34,7 +34,8 @@ Day | Notes                             | Topics
 10  | [April 28](lecture/2016.04.28/)   | Review
 11  | ---                               | Midterm
 12  | [May 5](lecture/2016.05.05/)      | Maps
-13  | May 10                            | 
+13  | [May 10](lecture/2016.05.10/)     | Maps, Interactive Maps
+14  | May 12                            | 
 
 
 

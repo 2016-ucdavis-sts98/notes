@@ -1,0 +1,359 @@
+v = readRDS("cl_vehicles.rds")
+names(v)
+plot(price ~ odometer, v)
+make_plot = function(x) {
+plot(price ~ odometer, x)
+}
+make_plot(v)
+make_plot(v)
+split(v, v$fuel)
+v_sp = split(v, v$fuel)
+names(v_sp)
+make_plot(v_sp$diesel)
+make_plot(v_sp$gas)
+v_sp = split(v, v$fuel)
+head(v_sp$gas)
+sapply(v_sp, colnames)
+lapply(v_sp, colnames)
+sapply(v_sp, median, na.rm = T)
+median_of_price = function(x) {
+median(x$price, na.rm = T)
+}
+median_of_price(v_sp$gas)
+sapply(v_sp, median_of_price)
+library("maps")
+sfbay = c("san francisco", "san mateo", "santa clara",
+"contra costa", "alameda", "napa", "solano",
+"sonoma")
+paste("california", sfbay, sep = ",")
+sfbay = paste("california", sfbay, sep = ",")
+map("county", sfbay, namesonly = TRUE, plot = FALSE)
+sfbay = map("county", sfbay, namesonly = TRUE, plot = FALSE)
+paste("davis", "california", sep = ",")
+paste(c("davis", "sacramento"), "california", sep = ",")
+paste(c("davis", "sacramento"), c("california", "nevada"), sep = ",")
+map("county", sfbay)
+v$region = paste(v$shp_state, v$shp_county, sep = ",")
+head(v$region)
+tolower("HELLO")
+v$region = tolower(v$region)
+head(v$region)
+sfbay
+"hello" %in% sfbay
+"california,alameda" %in% sfbay
+c("hello", "california,alameda") %in% sfbay
+c("california", "california,alameda") %in% sfbay
+v_sf = subset(v, region %in% sfbay)
+table(v_sf$region)
+tapply(v_sf$odometer, v_sf$region, median, na.rm = T)
+odo = tapply(v_sf$odometer, v_sf$region, median, na.rm = T)
+col = cut(odo, 4)
+library("viridis")
+palette = magma(4)
+col
+palette
+palette[c(1, 4)]
+unclass(col)
+length(col)
+col
+odo
+names(col) = sfbay
+col
+map("county", sfbay, col = palette[col], fill = TRUE)
+legend("topright", levels(col), palette)
+legend("topright", levels(col), fill = palette)
+map("county", sfbay, col = palette[col], fill = TRUE)
+legend("bottomleft", levels(col), fill = palette)
+map("county", sfbay, col = palette[col], fill = TRUE)
+legend("bottomleft", levels(col), fill = palette, cex = 0.75)
+odo
+col
+palette = magma(10)
+map("county", sfbay, col = palette[col], fill = TRUE)
+legend("bottomleft", levels(col), fill = palette, cex = 0.75)
+palette = magma(10)[3:6]
+map("county", sfbay, col = palette[col], fill = TRUE)
+legend("bottomleft", levels(col), fill = palette, cex = 0.75)
+map("county", sfbay, col = palette[col], fill = TRUE, mar = c(1, 1, 1, 1))
+legend("bottomleft", levels(col), fill = palette, cex = 0.75)
+map.text("county", sfbay)
+map("county", sfbay, col = palette[col], fill = TRUE, mar = c(1, 1, 1, 1))
+map.text("county", sfbay, add = TRUE)
+legend("bottomleft", levels(col), fill = palette, cex = 0.75)
+map("county", sfbay, col = palette[col], fill = TRUE, mar = c(1, 1, 1, 1))
+map.text("county", sfbay, add = TRUE, col = "white")
+legend("bottomleft", levels(col), fill = palette, cex = 0.75)
+map("county", sfbay, col = palette[col], fill = TRUE, mar = c(1, 1, 1, 1),
+bg = "gray90")
+map("county", sfbay, col = palette[col], fill = TRUE, mar = c(1, 1, 1, 1),
+bg = "gray60")
+map.text("county", sfbay, add = TRUE, col = "white")
+legend("bottomleft", levels(col), fill = palette, cex = 0.75)
+sfbay = c("san francisco", "san mateo", "santa clara",
+"contra costa", "alameda", "napa", "solano",
+"sonoma", "marin")
+sfbay = paste("california", sfbay, sep = ",")
+# paste(c("davis", "sacramento"), c("california", "nevada"), sep = ",")
+# Just to check:
+sfbay = map("county", sfbay, namesonly = TRUE, plot = FALSE)
+v$region = paste(v$shp_state, v$shp_county, sep = ",")
+v$region = tolower(v$region)
+head(v$region)
+#c("california", "california,alameda") %in% sfbay
+v_sf = subset(v, region %in% sfbay)
+odo = tapply(v_sf$odometer, v_sf$region, median, na.rm = T)
+col = cut(odo, 4)
+palette = magma(10)[3:6]
+map("county", sfbay, col = palette[col], fill = TRUE, mar = c(1, 1, 1, 1),
+bg = "gray60")
+map.text("county", sfbay, add = TRUE, col = "white")
+legend("bottomleft", levels(col), fill = palette, cex = 0.75)
+sfbay = c("san francisco", "san mateo", "santa clara",
+"contra costa", "alameda", "napa", "solano",
+"sonoma", "marin", "yolo", "sacramento")
+sfbay = paste("california", sfbay, sep = ",")
+# paste(c("davis", "sacramento"), c("california", "nevada"), sep = ",")
+# Just to check:
+sfbay = map("county", sfbay, namesonly = TRUE, plot = FALSE)
+v$region = paste(v$shp_state, v$shp_county, sep = ",")
+v$region = tolower(v$region)
+head(v$region)
+#c("california", "california,alameda") %in% sfbay
+v_sf = subset(v, region %in% sfbay)
+odo = tapply(v_sf$odometer, v_sf$region, median, na.rm = T)
+col = cut(odo, 4)
+palette = magma(10)[3:6]
+map("county", sfbay, col = palette[col], fill = TRUE, mar = c(1, 1, 1, 1),
+bg = "gray60")
+map.text("county", sfbay, add = TRUE, col = "white")
+legend("bottomleft", levels(col), fill = palette, cex = 0.75)
+?map.scale
+locator(1)
+map.scale(-123.51, 37.48, metric = FALSE)
+map.scale(-123.51, 37.48, metric = FALSE, cex = 0.5)
+map("county", sfbay, col = palette[col], fill = TRUE, mar = c(1, 1, 1, 1),
+bg = "gray60")
+map.text("county", sfbay, add = TRUE, col = "white")
+legend("bottomleft", levels(col), fill = palette, cex = 0.75)
+map.scale(-123.51, 37.48, metric = FALSE, cex = 0.5)
+locator(1)
+map("county", sfbay, col = palette[col], fill = TRUE, mar = c(1, 1, 1, 1),
+bg = "gray60")
+map.text("county", sfbay, add = TRUE, col = "white")
+legend("bottomleft", levels(col), fill = palette, cex = 0.75)
+map.scale(-123.10, 37.48, metric = FALSE, cex = 0.5)
+map.scale(-123.10, 37.48, metric = FALSE, cex = 0.5, col = "white")
+map("county", sfbay, col = palette[col], fill = TRUE, mar = c(1, 1, 1, 1),
+bg = "gray60")
+map.text("county", sfbay, add = TRUE, col = "white")
+legend("bottomleft", levels(col), fill = palette, cex = 0.75)
+map.scale(-123.10, 37.48, metric = FALSE, cex = 0.5, col = "white")
+?map.scale
+?par
+map.scale(-123.10, 37.48, metric = FALSE, cex = 0.5, col = "white", col.axis = "white")
+map("county", sfbay, col = palette[col], fill = TRUE, mar = c(1, 1, 1, 1),
+bg = "gray60")
+map.text("county", sfbay, add = TRUE, col = "white")
+legend("bottomleft", levels(col), fill = palette, cex = 0.75)
+map.scale(-123.10, 37.48, metric = FALSE, cex = 0.5, col = "white", col.axis = "white")
+map("county", sfbay, col = palette[col], fill = TRUE, mar = c(1, 1, 1, 1),
+bg = "gray60")
+map.text("county", sfbay, add = TRUE, col = "white")
+legend("bottomleft", levels(col), fill = palette, cex = 0.75)
+map.scale(-123.10, 37.48, metric = FALSE, cex = 0.5, col = "white", col.main = "white")
+map("county", sfbay, col = palette[col], fill = TRUE, mar = c(1, 1, 1, 1),
+bg = "gray60")
+map.text("county", sfbay, add = TRUE, col = "white")
+legend("bottomleft", levels(col), fill = palette, cex = 0.75)
+map.scale(-123.10, 37.48, metric = FALSE, cex = 0.5)
+map("county", sfbay, col = palette[col], fill = TRUE, mar = c(1, 1, 1, 1),
+bg = "gray60", main = "Odometer Readings for SF Bay")
+map.text("county", sfbay, add = TRUE, col = "white")
+legend("bottomleft", levels(col), fill = palette, cex = 0.75)
+map.scale(-123.10, 37.48, metric = FALSE, cex = 0.5)
+map("county", sfbay, col = palette[col], fill = TRUE, mar = c(1, 1, 1, 1),
+bg = "gray60", title = "Odometer Readings for SF Bay")
+map.text("county", sfbay, add = TRUE, col = "white")
+map("county", sfbay, col = palette[col], fill = TRUE, mar = c(1, 1, 1, 1),
+bg = "gray60", main = "Odometer Readings for SF Bay")
+map.text("county", sfbay, add = TRUE, col = "white")
+legend("bottomleft", levels(col), fill = palette, cex = 0.75)
+map.scale(-123.10, 37.48, metric = FALSE, cex = 0.5)
+map("county", sfbay, col = palette[col], fill = TRUE, mar = c(2, 2, 2, 2),
+bg = "gray60", main = "Odometer Readings for SF Bay")
+map.text("county", sfbay, add = TRUE, col = "white")
+legend("bottomleft", levels(col), fill = palette, cex = 0.75)
+map.scale(-123.10, 37.48, metric = FALSE, cex = 0.5)
+?par
+map("county", sfbay, col = palette[col], fill = TRUE, mar = c(1, 1, 6, 1),
+bg = "gray60", main = "Odometer Readings for SF Bay")
+map.text("county", sfbay, add = TRUE, col = "white")
+legend("bottomleft", levels(col), fill = palette, cex = 0.75)
+map.scale(-123.10, 37.48, metric = FALSE, cex = 0.5)
+map("county", sfbay, col = palette[col], fill = TRUE, mar = c(1, 1, 10, 1),
+bg = "gray60", main = "Odometer Readings for SF Bay")
+map.text("county", sfbay, add = TRUE, col = "white")
+legend("bottomleft", levels(col), fill = palette, cex = 0.75)
+title("Hello")
+?titles
+?title
+title("Odometer Readings for SF Bay", line = 1)
+map("county", sfbay, col = palette[col], fill = TRUE, mar = c(1, 1, 4, 1),
+bg = "gray60")
+title("Odometer Readings for SF Bay", line = 1)
+map.text("county", sfbay, add = TRUE, col = "white")
+legend("bottomleft", levels(col), fill = palette, cex = 0.75)
+map.scale(-123.10, 37.48, metric = FALSE, cex = 0.5)
+sfbay = c("san francisco", "san mateo", "santa clara",
+"contra costa", "alameda", "napa", "solano",
+"sonoma", "marin", "yolo", "sacramento", "orange")
+sfbay = paste("california", sfbay, sep = ",")
+# paste(c("davis", "sacramento"), c("california", "nevada"), sep = ",")
+# Just to check:
+sfbay = map("county", sfbay, namesonly = TRUE, plot = FALSE)
+v$region = paste(v$shp_state, v$shp_county, sep = ",")
+v$region = tolower(v$region)
+head(v$region)
+#c("california", "california,alameda") %in% sfbay
+v_sf = subset(v, region %in% sfbay)
+odo = tapply(v_sf$odometer, v_sf$region, median, na.rm = T)
+col = cut(odo, 4)
+palette = magma(10)[3:6]
+map("county", sfbay, col = palette[col], fill = TRUE, mar = c(1, 1, 4, 1),
+bg = "gray60")
+title("Odometer Readings for SF Bay", line = 1)
+map.text("county", sfbay, add = TRUE, col = "white")
+legend("bottomleft", levels(col), fill = palette, cex = 0.75)
+map.scale(-123.10, 37.48, metric = FALSE, cex = 0.5)
+sfbay = c("san francisco", "san mateo", "santa clara",
+"contra costa", "alameda", "napa", "solano",
+"sonoma", "marin", "yolo", "sacramento")
+sfbay = paste("california", sfbay, sep = ",")
+# paste(c("davis", "sacramento"), c("california", "nevada"), sep = ",")
+# Just to check:
+sfbay = map("county", sfbay, namesonly = TRUE, plot = FALSE)
+v$region = paste(v$shp_state, v$shp_county, sep = ",")
+v$region = tolower(v$region)
+head(v$region)
+#c("california", "california,alameda") %in% sfbay
+v_sf = subset(v, region %in% sfbay)
+odo = tapply(v_sf$odometer, v_sf$region, median, na.rm = T)
+col = cut(odo, 4)
+palette = magma(10)[3:6]
+map("county", sfbay, col = palette[col], fill = TRUE, mar = c(1, 1, 4, 1),
+bg = "gray60")
+title("Odometer Readings for SF Bay", line = 1)
+map.text("county", sfbay, add = TRUE, col = "white")
+legend("bottomleft", levels(col), fill = palette, cex = 0.75)
+map.scale(-123.10, 37.48, metric = FALSE, cex = 0.5)
+la = c("orange", "los angeles")
+la = paste("california", la, sep = ",")
+map("county", la)
+v_la = subset(v, region %in% la)
+odo = tapply(v_la$odometer, v_la$region, median, na.rm = T)
+odo
+col = cut(odo, 4)
+co
+col
+map("county", la, col = palette[col], fill = TRUE)
+map("county", la, col = palette[col], fill = TRUE, bg = "gray50")
+par(mfrow = c(2, 1))
+map("county", sfbay, col = palette[col], fill = TRUE, mar = c(1, 1, 4, 1),
+bg = "gray60")
+title("Odometer Readings for SF Bay", line = 1)
+map.text("county", sfbay, add = TRUE, col = "white")
+legend("bottomleft", levels(col), fill = palette, cex = 0.75)
+map("county", sfbay, col = palette[col], fill = TRUE, mar = c(1, 1, 4, 1),
+bg = "gray60")
+title("Odometer Readings for SF Bay", line = 1)
+map.text("county", sfbay, add = TRUE, col = "white")
+legend("bottomleft", levels(col), fill = palette, cex = 0.75)
+map.scale(-123.10, 37.48, metric = FALSE, cex = 0.5)
+par(mfrow = c(2, 1))
+map("county", sfbay, col = palette[col], fill = TRUE, mar = c(1, 1, 4, 1),
+bg = "gray60")
+title("Odometer Readings for SF Bay", line = 1)
+map.text("county", sfbay, add = TRUE, col = "white")
+legend("bottomleft", levels(col), fill = palette, cex = 0.75)
+map.scale(-123.10, 37.48, metric = FALSE, cex = 0.5)
+map("county", la, col = palette[col], fill = TRUE, bg = "gray50")
+col = cut(odo, c(0, 25000, 50000, 100000, Inf))
+palette = magma(10)[3:6]
+par(mfrow = c(2, 1))
+map("county", sfbay, col = palette[col], fill = TRUE, mar = c(1, 1, 4, 1),
+bg = "gray60")
+title("Odometer Readings for SF Bay", line = 1)
+map.text("county", sfbay, add = TRUE, col = "white")
+legend("bottomleft", levels(col), fill = palette, cex = 0.75)
+br = c(0, 25000, 50000, 100000, Inf)
+col = cut(odo, br)
+palette = magma(10)[3:6]
+par(mfrow = c(2, 1))
+map("county", sfbay, col = palette[col], fill = TRUE, mar = c(1, 1, 4, 1),
+bg = "gray60")
+title("Odometer Readings for SF Bay", line = 1)
+map.text("county", sfbay, add = TRUE, col = "white")
+legend("bottomleft", levels(col), fill = palette, cex = 0.75)
+map.scale(-123.10, 37.48, metric = FALSE, cex = 0.5)
+la = c("orange", "los angeles")
+la = paste("california", la, sep = ",")
+v_la = subset(v, region %in% la)
+odo = tapply(v_la$odometer, v_la$region, median, na.rm = T)
+col = cut(odo, br)
+map("county", la, col = palette[col], fill = TRUE, bg = "gray50")
+br = c(0, 25000, 50000, 100000, Inf)
+col = cut(odo, br)
+col
+v_sf$col = cut(v_sf$odometer, br)
+map("county", sfbay)
+par(mfrow = c(1, 1))
+v_sf$col = cut(v_sf$odometer, br)
+map("county", sfbay)
+points(v_sf$longitude, v_sf$latitude)
+map("county", sfbay)
+points(v_sf$longitude, v_sf$latitude, col = palette[v_sf$col])
+points(v_sf$longitude, v_sf$latitude, col = palette[v_sf$col], pch = 19)
+map("county", sfbay)
+points(v_sf$longitude, v_sf$latitude, col = palette[v_sf$col],
+pch = 19, cex = 0.5)
+legend("bottomleft", levels(v_sf$col), pch = 19, col = palette)
+library("leafletR")
+m = leaflet()
+m
+v_latlon = v[c("latitude", "longitude")]
+geo = toGeoJSON(v_latlon)
+m = leaflet(geo)
+v_latlon = subset(v, !is.na(latitude), c("latitude", "longitude"))
+geo = toGeoJSON(v_latlon)
+m = leaflet(geo)
+m
+v_latlon = subset(v, !is.na(latitude), c("latitude", "longitude"))
+v_latlon = v_latlon[1:100, ]
+geo = toGeoJSON(v_latlon)
+v_latlon = subset(v, !is.na(latitude), c("latitude", "longitude", "odometer"))
+v_latlon = v_latlon[1:100, ]
+geo = toGeoJSON(v_latlon)
+m = leaflet(geo, popup = "odometer")
+m
+?styleGrad
+br
+br[5]
+br[5] = 1e10
+br
+styleGrad("odometer", br, syle.par = "col", style.val = viridis(4))
+style = styleGrad("odometer", br, syle.par = "col", style.val = viridis(4))
+m = leaflet(geo, popup = "odometer", style = style)
+m
+dev.off()
+style = styleGrad("odometer", br, style.par = "col", style.val = viridis(4))
+m = leaflet(geo, popup = "odometer", style = style)
+m
+style = styleGrad("odometer", br, style.par = "rad", style.val = viridis(4))
+m = leaflet(geo, popup = "odometer", style = style)
+m
+style = styleGrad("odometer", br, style.par = "rad", style.val = 1:4)
+m = leaflet(geo, popup = "odometer", style = style)
+m
+style = styleGrad("odometer", br, style.par = "rad", style.val = c(10, 20, 30, 40))
+m = leaflet(geo, popup = "odometer", style = style)
+m
