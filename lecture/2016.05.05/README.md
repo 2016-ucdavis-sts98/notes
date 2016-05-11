@@ -43,7 +43,7 @@ Package      | Description
 ------------ | -----------
 maps         | make simple static maps
 RgoogleMaps  | make static maps with backgrounds from Google maps
-chloroplethr | make chloropleths (advanced features)
+choroplethr  | make choropleths (advanced features)
 cartography  | make static maps (advanced features)
 leafletR     | interactive maps with the Leaflet JavaScript library
 rMaps        | interactive maps (still in development)
@@ -147,7 +147,7 @@ map("county", sfbay, add = TRUE)
 A larger `nbin` setting for `smoothScatter()` results in a smoother plot,
 but also takes more time to draw.
 
-Example - Chloropleth
+Example - Choropleth
 ---------------------
 How can you visualize the price of vehicles by county?
 
