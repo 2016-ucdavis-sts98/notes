@@ -13,7 +13,7 @@ Announcements
 Questions
 ---------
 
-Q: When to use functions?
+__Q__: When to use functions?
 
 ```r
 v = readRDS("cl_vehicles.rds")
@@ -87,6 +87,9 @@ title("Odometer Readings for SF Bay", line = 1)
 map.text("county", sfbay, add = TRUE, col = "white")
 legend("bottomleft", levels(col), fill = palette, cex = 0.75)
 map.scale(-123.10, 37.48, metric = FALSE, cex = 0.5)
+
+# For a different-colored scale, see the map_scale.R file. The only way to do
+# it is to rewrite the map.scale() function.
 ```
 
 If you want to make side-by-side maps, set `mfrow` before plotting:
