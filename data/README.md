@@ -33,9 +33,10 @@ lecture. If a file name is listed, the data set is included in this repository.
     ```r
     county = readRDS("shp_county.rds")
 
-    library("maps")
-    map(county)
+    plot(county)
     ```
+
+* `random_points.rds`: made-up "toy" data to demonstrate correlation
 
 [quakes]: http://www.ngdc.noaa.gov/nndc/struts/form?t=101650&s=1&d=1
 [NOAA CDO]: http://www.ncdc.noaa.gov/cdo-web/
