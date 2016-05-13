@@ -35,7 +35,8 @@ Day | Notes                             | Topics
 11  | ---                               | Midterm
 12  | [May 5](lecture/2016.05.05/)      | Maps
 13  | [May 10](lecture/2016.05.10/)     | Maps, Interactive Maps
-14  | May 12                            | 
+14  | [May 12](lecture/2016.05.12/)     | Shapefiles, Outliers, Missing Data
+15  | May 17                            | Guest Speaker: Triage Consulting
 
 
 
