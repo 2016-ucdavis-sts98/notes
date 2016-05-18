@@ -1,0 +1,32 @@
+x = anscombe
+saveRDS(x, "my_data.rds")
+v = readRDS("cl_vehicles.rds")
+plot(price ~ odometer, v)
+df = readRDS("data/random_points.rds")
+head(df)
+plot(y1 ~ x, df)
+abline(h = mean(df$x), lty = 'dotted', col = 'red')
+plot(y1 ~ x, df)
+abline(v = mean(df$x), lty = 'dotted', col = 'red')
+abline(h = mean(df$y1), lty = 'dotted', col = 'red')
+plot(y2 ~ x, df)
+abline(v = mean(df$x), lty = 'dotted', col = 'red')
+abline(h = mean(df$y2), lty = 'dotted', col = 'red')
+cor(df$x, df$y1)
+cor(df$x, df$y2)
+head(anscombe)
+colMeans(anscombe)
+sapply(anscombe, sd)
+sapply(anscombe, median)
+sapply(anscombe, IQR)
+mapply(cor, anscombe[1:4], anscombe[5:8])
+mapply(plot, anscombe[1:4], anscombe[5:8])
+par(mfrow = c(2, 2))
+mapply(plot, anscombe[1:4], anscombe[5:8])
+?heatmap
+x = c(1, 5, 6, 7, 3, 2, 3, 9)
+x
+col = cut(x, 2)
+col
+palette = c("red", "blue")
+palette[col]
