@@ -1,9 +1,17 @@
 # Description:
 #   A revised version of the map.scale() function.
+#   
+#   This script requires the maps package. You can load the function in the
+#   script with
 #
-# Usage:
-#   source("map_scale.R")
-#   map.scale2(...)
+#       source("map_scale.R")
+#
+#   The syntax is the same as the original function, but the `col` parameter
+#   now changes the color of the scale line in addition to the text.
+
+
+library("map")
+
 
 map.scale2 <-
 function (x, y, relwidth = 0.15, metric = TRUE, ratio = TRUE, ...) 
