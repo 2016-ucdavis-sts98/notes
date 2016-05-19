@@ -38,6 +38,8 @@ lecture. If a file name is listed, the data set is included in this repository.
 
 * `random_points.rds`: made-up "toy" data to demonstrate correlation
 
+* `inventory/`: made-up "toy" data to demonstrate joins
+
 [quakes]: http://www.ngdc.noaa.gov/nndc/struts/form?t=101650&s=1&d=1
 [NOAA CDO]: http://www.ncdc.noaa.gov/cdo-web/
 [FiveThirtyEightData]: https://github.com/fivethirtyeight/data
