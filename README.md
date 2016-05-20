@@ -34,10 +34,10 @@ Day | Notes                           | Topics                                  
 10  | [April 28](lecture/2016.04.28/) | Review                                            | [The Guardian's Data Blog][n-guardian]
 11  | May 3                           | Midterm                                           | ---
 12  | [May 5](lecture/2016.05.05/)    | Maps                                              | [BallR][n-ballr]
-13  | [May 10](lecture/2016.05.10/)   | Maps, Interactive Maps                            | [Global Cargo Ships Map][n-shipmap]
+13  | [May 10](lecture/2016.05.10/)   | Maps, Interactive Maps                            | [FiveThirtyEight: Swing The Election][n-swing]
 14  | [May 12](lecture/2016.05.12/)   | Shapefiles, Outliers, Missing Data                | [I Quant NY: NYPD Ticketing][n-nypd]
 15  | [May 17](lecture/2016.05.17/)   | [Guest Speaker: Triage Consulting][], Correlation | [FiveThirtyEight: Sumo Matchups][n-sumo]
-16  | May 19                          |                                                   |
+16  | [May 19](lecture/2016.05.19/)   | Confounding Variables, Joins (`merge()`)          | [Global Cargo Ships Map][n-shipmap]
 
 [Guest Speaker: Tim McCarthy]: http://timmccarthy.com/
 [Guest Speaker: Triage Consulting]: http://www.triageconsulting.com/
@@ -51,6 +51,7 @@ Day | Notes                           | Topics                                  
 [n-bigdata]: http://nautil.us/blog/how-big-data-creates-false-confidence
 [n-guardian]: http://www.theguardian.com/data
 [n-ballr]: https://github.com/toddwschneider/ballr
-[n-shipmap]: https://www.shipmap.org/
+[n-swing]: http://projects.fivethirtyeight.com/2016-swing-the-election/
 [n-nypd]: http://iquantny.tumblr.com/post/144197004989/the-nypd-was-systematically-ticketing-legally
 [n-sumo]: http://fivethirtyeight.com/features/the-sumo-matchup-centuries-in-the-making/
+[n-shipmap]: https://www.shipmap.org/

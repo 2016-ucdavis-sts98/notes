@@ -1,0 +1,69 @@
+sf = readRDS("data/maps/shp_sf_neighborhood.rds")
+plot(sf)
+x = readRDS("hcmst.rds")
+x = subset(x, !is.na(breakup))
+x$avg_age = with(x, age + partner_age) / 2
+summary(x$avg_age)
+age_by_bkp = split(x$avg_age, x$breakup)
+names(age_by_bkp)
+sapply(age_by_bkp, mean, na.rm = T)
+histogram(age_by_bkp$yes)
+hist(age_by_bkp$yes)
+hist(age_by_bkp$yes, col = "gray")
+h = hist(age_by_bkp$yes, col = "gray")
+str(h)
+table(cut(x$avg_age, h$breaks))
+table(cut(x$avg_age, h$breaks), x$breakup)
+tab = table(cut(x$avg_age, h$breaks), x$breakup)
+ptab_rows = prop.table(tab, 1)
+ptab_all = prop.table(tab)
+par(mfrow = c(3, 1))
+str(h)
+barplot(h$counts)
+barplot(h$counts, space = 0)
+tab
+labels = rownames(tab)
+labels
+?barplot
+barplot(h$counts, space = 0, names.arg = labels)
+ptab_all
+par(mfrow = c(3, 1))
+barplot(h$counts, space = 0, names.arg = labels)
+barplot(ptab_all[, 1], space = 0)
+barplot(ptab_rows[, 1], space = 0)
+s = readRDS("data/inventory/suppliers.rds")
+s
+p = readRDS("data/inventory/parts.rds")
+parts
+p
+sp = readRDS("data/inventory/supplier_parts.rds")
+sp
+merge(s, sp, by = "SupplierID")
+merge(s, sp, by = "SupplierID", all = TRUE)
+merged = merge(s, sp, by = "SupplierID")
+merged
+merge(merged, p, by = "PartID")
+s
+p
+final_merge = merge(merged, p, by = "PartID")
+names(final_merge)
+names(final_merge)[5] = "SupplierCity"
+names(final_merge)[10] = "PartCity"
+head(final_merge)
+final_merge[c("SupplierName", "PartName", "Qty")]
+s
+sp
+names(sp)[2] = "ID_Supplier"
+head(s)
+head(sp)
+merge(s, sp, by.x = "SupplierID", by.y = "ID_Supplier")
+head(s)
+head(s)
+head(sp)
+library("reshape2")
+smiths
+melt(smiths)
+dogs = readRDS("data/dogs.rds")
+dogs
+melt(dogs)
+melt(dogs, measure.vars = c("rabies", "distemper"))
