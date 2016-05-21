@@ -74,6 +74,7 @@ v$region = tolower(v$region)
 # 3. Get the average odometer readings.
 v_sf = subset(v, region %in% sfbay)
 odo = tapply(v_sf$odometer, v_sf$region, median, na.rm = T)
+odo = odo[sfbay]
 
 # 4. Make a color palette.
 br = c(0, 25000, 50000, 100000, Inf)
