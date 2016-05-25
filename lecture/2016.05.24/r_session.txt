@@ -1,0 +1,63 @@
+#####################
+# Unfortunately the R session crashed halfway through lecture, so this is just
+# the last half.
+#####################
+
+v = readRDS("cl_vehicles.rds")
+table(v$model)
+grep("porsche 911", v$text, fixed = TRUE)
+grep("porsche 911", v$text, fixed = TRUE, ignore.case = TRUE)
+?grep
+grep("porsche 911", v$text, fixed = TRUE, ignore.case = TRUE)
+grep("porsche 911", v$text, TRUE, fixed = TRUE)
+grep("porsche 911", v$text, TRUE)
+v[142, ]
+indexes = grep("porsche 911", v$text, ignore.case = TRUE)
+indexes
+porsche = grepl("porsche 911", v$text, TRUE)
+head(porsche)
+nrow(v)
+subset(v, porsche)
+gsub("_", " ", "Hello_world!", fixed = TRUE)
+names(v)
+table(v$date_posted, v$drive)
+class(v$date_posted)
+table(as.Date(v$date_posted), v$drive)
+drive_freq = table(as.Date(v$date_posted), v$drive)
+drive_freq = as.data.frame(drive_freq)
+drive_freq
+names(drive_freq) = c("date", "drive", "freq")
+head(drive_freq)
+library("lattice")
+xyplot(freq ~ date, drive_freq, groups = drive)
+class(drive_freq$date)
+xyplot(freq ~ as.Date(date), drive_freq, groups = drive)
+xyplot(freq ~ as.Date(date), drive_freq, groups = drive,
+type = "b")
+xyplot(freq ~ as.Date(date), drive_freq, groups = drive,
+type = "b", auto.key = TRUE)
+?simpleKey
+key = list(space = "right")
+xyplot(freq ~ as.Date(date), drive_freq, groups = drive,
+type = "b", auto.key = key)
+?simpleKey
+key = list(space = "right", points = FALSE, lines = TRUE)
+xyplot(freq ~ as.Date(date), drive_freq, groups = drive,
+type = "b", auto.key = key)
+key = list(space = "right", points = FALSE, lines = TRUE,
+col = 1:3)
+xyplot(freq ~ as.Date(date), drive_freq, groups = drive,
+type = "b", auto.key = key)
+xyplot(freq ~ as.Date(date), drive_freq, groups = drive,
+type = "b", auto.key = key, col = 1:3)
+key = list(space = "right", points = FALSE, lines = TRUE)
+xyplot(freq ~ as.Date(date), drive_freq, groups = drive,
+type = "b", auto.key = key, col = 1:3)
+show.settings()
+settings = trellis.par.get()
+str(settings)
+settings$superpose.line
+settings$superpose.line$col = 1:3
+xyplot(freq ~ as.Date(date), drive_freq, groups = drive,
+type = "b", auto.key = key, par.settings = settings)
+show.settings()
