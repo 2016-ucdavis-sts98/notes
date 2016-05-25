@@ -37,7 +37,8 @@ Day | Notes                           | Topics                                  
 13  | [May 10](lecture/2016.05.10/)   | Maps, Interactive Maps                            | [FiveThirtyEight: Swing The Election][n-swing]
 14  | [May 12](lecture/2016.05.12/)   | Shapefiles, Outliers, Missing Data                | [I Quant NY: NYPD Ticketing][n-nypd]
 15  | [May 17](lecture/2016.05.17/)   | [Guest Speaker: Triage Consulting][], Correlation | [FiveThirtyEight: Sumo Matchups][n-sumo]
-16  | [May 19](lecture/2016.05.19/)   | Confounding Variables, Joins (`merge()`)          | [Global Cargo Ships Map][n-shipmap]
+16  | [May 19](lecture/2016.05.19/)   | Confounding Variables, Joins                      | [Global Cargo Ships Map][n-shipmap]
+17  | [May 24](lecture/2016.05.24/)   | Reshape2, String Operations, Lattice              | [FlowingData: Changing American Diet][n-diet]
 
 [Guest Speaker: Tim McCarthy]: http://timmccarthy.com/
 [Guest Speaker: Triage Consulting]: http://www.triageconsulting.com/
@@ -55,3 +56,4 @@ Day | Notes                           | Topics                                  
 [n-nypd]: http://iquantny.tumblr.com/post/144197004989/the-nypd-was-systematically-ticketing-legally
 [n-sumo]: http://fivethirtyeight.com/features/the-sumo-matchup-centuries-in-the-making/
 [n-shipmap]: https://www.shipmap.org/
+[n-diet]: http://flowingdata.com/2016/05/17/the-changing-american-diet/
