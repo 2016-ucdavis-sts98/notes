@@ -1,0 +1,161 @@
+v = readRDS("cl_vehicles.rds")
+drive_freq = table(as.Date(v$date_posted), v$drive)
+head(drive_freq)
+drive_freq = as.data.frame(drive_freq)
+head(drive_freq)
+names(drive_freq) = c("date", "drive", "freq")
+head(drive_freq)
+xyplot(freq ~ date, drive_freq)
+library("lattice")
+xyplot(freq ~ date, drive_freq)
+xyplot(freq ~ as.Date(date), drive_freq)
+xyplot(freq ~ as.Date(date), drive_freq, groups = drive)
+xyplot(freq ~ as.Date(date), drive_freq, groups = drive,
+type = 'l')
+xyplot(freq ~ as.Date(date), drive_freq, groups = drive,
+type = 'l', auto.key = T)
+xyplot(freq ~ as.Date(date), drive_freq, groups = drive,
+type = 'l', auto.key = T, lty = c("solid", "dashed", "dotted"))
+show.settings()
+settings = trellis.par.get()
+str(settings)
+settings = trellis.par.get()
+settings$superpose.line$lty = c("solid", "dashed", "dotted")
+xyplot(freq ~ as.Date(date), drive_freq, groups = drive,
+type = 'l', auto.key = T, par.settings = settings)
+?simpleKey
+key = list(points = FALSE, lines = TRUE)
+xyplot(freq ~ as.Date(date), drive_freq, groups = drive,
+type = 'l', auto.key = key, par.settings = settings)
+library("RColorBrewer")
+display.brewer.all()
+brewer.pal(3, "Set1")
+settings$superpose.line$col =  brewer.pal(3, "Set1")
+brewer.pal(5, "Set1")
+brewer.pal(20, "Set1")
+settings$superpose.line$col =  brewer.pal(3, "Set1")
+xyplot(freq ~ as.Date(date), drive_freq, groups = drive,
+type = 'l', auto.key = key, par.settings = settings)
+drive_freq
+abline(v = as.Date("2016-04-30"))
+panel = function(x, y, ...) {
+# Draw stuff!
+}
+xyplot(freq ~ as.Date(date), drive_freq, groups = drive,
+type = 'l', auto.key = key, par.settings = settings,
+panel = panel)
+xyplot(freq ~ as.Date(date), drive_freq, groups = drive,
+type = 'l', auto.key = key, par.settings = settings,
+panel = panel)
+dev.off()
+dev.off()
+xyplot(freq ~ as.Date(date), drive_freq, groups = drive,
+type = 'l', auto.key = key, par.settings = settings,
+panel = panel)
+panel = function(x, y, ...) {
+# Draw stuff!
+panel.xyplot(x, y, ...)
+}
+xyplot(freq ~ as.Date(date), drive_freq, groups = drive,
+type = 'l', auto.key = key, par.settings = settings,
+panel = panel)
+panel = function(x, y, ...) {
+# Draw stuff!
+panel.abline(v = as.Date("2016-04-30"), lwd = "3")
+panel.xyplot(x, y, ...)
+}
+xyplot(freq ~ as.Date(date), drive_freq, groups = drive,
+type = 'l', auto.key = key, par.settings = settings,
+panel = panel)
+library("grid")
+?grid.locator
+grid.locator()
+?units
+?unit
+?panel.points
+?panel.points
+panel = function(x, y, ...) {
+# Draw stuff!
+panel.abline(v = as.Date("2016-04-30"), lwd = "3")
+panel.xyplot(x, y, ...)
+panel.points(271, 186)
+}
+xyplot(freq ~ as.Date(date), drive_freq, groups = drive,
+type = 'l', auto.key = key, par.settings = settings,
+panel = panel)
+panel = function(x, y, ...) {
+# Draw stuff!
+panel.abline(v = as.Date("2016-04-30"), lwd = "3")
+panel.xyplot(x, y, ...)
+panel.points(as.Date("2016-04-28"), 200)
+}
+xyplot(freq ~ as.Date(date), drive_freq, groups = drive,
+type = 'l', auto.key = key, par.settings = settings,
+panel = panel)
+xyplot(price ~ odometer, v)
+xyplot(price ~ odometer, v, xlim = c(0, 1e6), ylim = c(0, 1e5))
+panel = function(x, y, ...) {
+panel.smoothScatter(x, y, ...)
+}
+xyplot(price ~ odometer, v, xlim = c(0, 1e6), ylim = c(0, 1e5),
+panel = panel)
+xyplot(price ~ odometer, v, xlim = c(0, 1e6), ylim = c(0, 1e5),
+panel = panel, nbin = 200)
+?panel.smoothScatter
+brewer.pal(4, "Set1")
+colramp = function(n) {
+brewer.pal(n, "Set1")
+}
+xyplot(price ~ odometer, v, xlim = c(0, 1e6), ylim = c(0, 1e5),
+panel = panel, nbin = 200, colramp = colramp)
+library("viridis")
+xyplot(price ~ odometer, v, xlim = c(0, 1e6), ylim = c(0, 1e5),
+panel = panel, nbin = 200, colramp = magma)
+xyplot(price ~ odometer, v, xlim = c(0, 1e6), ylim = c(0, 1e5),
+panel = panel, nbin = 200, colramp = viridis)
+xyplot(price ~ odometer | drive, v, xlim = c(0, 1e6), ylim = c(0, 1e5),
+panel = panel, nbin = 200, colramp = viridis)
+library("ggplot2")
+head(diamonds)
+qplot(carat, price, data = diamonds)
+qplot(carat, price, data = diamonds, geom = "line")
+qplot(carat, price, data = diamonds, geom = "point")
+qplot(carat, price, data = diamonds, geom = "density_2d")
+qplot(carat, price, data = diamonds, geom = c("point", "density_2d"))
+qplot(price, data = diamonds)
+qplot(price, data = diamonds, geom = "density")
+qplot(price, data = diamonds, geom = c("histogram", "density"))
+qplot(price, data = diamonds, geom = c("density"))
+qqplot(price, data = diamonds, binwidth = 0.1)
+qplot(price, data = diamonds, binwidth = 0.1)
+qplot(price, data = diamonds, binwidth = 10)
+qplot(price, data = diamonds, binwidth = 100)
+qplot(price, data = diamonds, binwidth = 100, facets = cut ~ .)
+qplot(price, data = diamonds, binwidth = 100, facets = . ~ cut)
+qplot(price, data = diamonds, binwidth = 100, facets = clarity ~ cut)
+qplot(carat, price, data = diamonds, geom = "point", color = cut)
+qplot(carat, price, data = diamonds, geom = "point", color = "blue")
+qplot(carat, price, data = diamonds, geom = "point", color = I("blue"))
+qplot(carat, price, data = diamonds, geom = "point", color = I("blue"),
+size = I(10))
+qplot(carat, price, data = diamonds, geom = "point", size = price,
+color = cut, shape = cut)
+qplot(carat, price, data = diamonds, geom = "point", size = price,
+color = cut, shape = cut, alpha = I(1 / 100))
+qplot(carat, price, data = diamonds, geom = "point", size = price,
+color = cut, alpha = I(1 / 100))
+qplot(carat, price, data = diamonds, geom = "point", size = price,
+color = cut, alpha = I(1 / 100), main = "Price vs Carat")
+ggplot(diamonds, aes(x = carat, y = price, color = cut))
+gg = ggplot(diamonds, aes(x = carat, y = price, color = cut))
+gg + geom_point()
+gg + geom_line()
+gg = ggplot(diamonds, aes(x = carat, y = price, color = cut))
+gg = gg + geom_point()
+gg
+gg %+% subset(diamonds, price >= 10000)
+gg %+% subset(diamonds, cut == "Fair")
+head(diamonds)
+gg %+% subset(diamonds, depth > 60)
+gg %+% subset(diamonds, depth > 80)
+gg %+% subset(diamonds, depth > 65)
