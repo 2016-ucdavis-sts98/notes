@@ -1,0 +1,80 @@
+library("rvest")
+doc = read_html("data/example.html")
+doc
+html_children(doc)
+html_children(doc)[[1]]
+head = html_children(doc)[[1]]
+html_children(head)
+title = html_children(head)
+html_text(title)
+html_node(doc, "body > p:nth-child(3)")
+para = html_node(doc, "body > p:nth-child(3)")
+html_text(para)
+html_nodes(doc, "p")
+html_node(doc, "p")
+wiki_url =
+"https://en.wikipedia.org/wiki/List_of_cities_and_towns_in_California"
+doc = read_html(wiki_url)
+doc
+wiki_tab = html_node(doc, "table.wikitable:nth-child(20)")
+wiki_tab
+html_text(wiki_tab)
+html_table(wiki_tab)
+cities = html_table(wiki_tab, fill = TRUE)
+head(cities)
+names(cities) = c("city", "type", "county", "population", "mi2", "km2", "date")
+head(cities)
+cities = cities[-1, ]
+cities
+head(cities)
+rownames(cities) = NULL
+head(cities)
+substr("hi sts 98", 4, 7)
+substr("hi sts 98", 4, 6)
+dates = substr(cities$date, 9, 18)
+head(dates)
+tail(dates)
+head(dates)
+tail(dates)
+dates = as.Date(dates)
+cities$date = dates
+head(cities)
+mean(cities$population)
+mean(cities$population, na.rm = T)
+class(cities$population)
+pop = as.numeric(cities$population)
+head(pop)
+table(pop, useNA = 'always')
+head(cities)
+pop = gsub(",", "", cities$population)
+pop = as.numeric(pop)
+head(pop)
+table(pop, useNA = 'always')
+which(is.na(pop))
+cities[122, ]
+cities[199, ]
+pop = gsub(",", "", cities$population)
+pop = gsub("[9]", "", pop, fixed = TRUE)
+pop = gsub("[10]", "", pop, fixed = TRUE)
+pop = as.numeric(pop)
+table(pop, useNA = 'always')
+cities$population = pop
+head(cities)
+sapply(cities, class)
+library("ggmap")
+nrow(cities)
+addr = paste(cities$city, ", CA", sep = "")
+head(addr)
+first5 = head(addr, 5)
+gcodes =geocode(first5)
+gcodes
+cbind(first5, gcodes)
+geocode("1 Shields Ave, Davis, CA")
+geocode("UC Davis")
+geocode("Univerity of California, Davis")
+summarize(group_by(cities, county), pop_mean = mean(population),
+pop_med = median(population), pop_sum = sum(population))
+library("dplyr")
+summarize(group_by(cities, county), pop_mean = mean(population),
+pop_med = median(population), pop_sum = sum(population))
+?geom_point

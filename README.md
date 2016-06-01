@@ -11,10 +11,14 @@ Important links:
 * [Piazza](https://piazza.com/ucdavis/spring2016/sts98)
 * [Rubric](rubric.pdf)
 
-Package Documentation:
+Package documentation:
 
 * [Viridis](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html)
 * [cartography](https://cran.r-project.org/web/packages/cartography/vignettes/cartography.html)
+
+Other links:
+
+* [Have I Been Pwned?](https://haveibeenpwned.com/) - check your account security
 
 For links to specific assignments, see Piazza.
 
@@ -40,6 +44,8 @@ Day | Notes                           | Topics                                  
 16  | [May 19](lecture/2016.05.19/)   | Confounding Variables, Joins                      | [Global Cargo Ships Map][n-shipmap]
 17  | [May 24](lecture/2016.05.24/)   | Reshape2, String Operations, Lattice              | [FlowingData: Changing American Diet][n-diet]
 18  | [May 26](lecture/2016.05.26/)   | Lattice, ggplot2                                  | [Racial Dot Map][n-racial]
+19  | [May 31](lecture/2016.05.31/)   | Web Scraping, Geocoding, dplyr                    | [DHQ: Jane, John, ... Leslie?][n-gender]
+20  | June 2                          | Review                                            | 
 
 [Guest Speaker: Tim McCarthy]: http://timmccarthy.com/
 [Guest Speaker: Triage Consulting]: http://www.triageconsulting.com/
@@ -59,3 +65,4 @@ Day | Notes                           | Topics                                  
 [n-shipmap]: https://www.shipmap.org/
 [n-diet]: http://flowingdata.com/2016/05/17/the-changing-american-diet/
 [n-racial]: http://demographics.coopercenter.org/DotMap/index.html
+[n-gender]: http://www.digitalhumanities.org/dhq/vol/9/3/000223/000223.html
