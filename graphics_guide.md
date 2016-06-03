@@ -114,4 +114,4 @@ PLOTTING FUNCTIONS!!!
 
 ## ggplot2 Graphics
 
-Documentation for ggplot2 is available at <docs.ggplot2.org>.
+Documentation for ggplot2 is available [here](docs.ggplot2.org).
