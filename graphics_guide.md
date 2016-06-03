@@ -111,3 +111,7 @@ It's possible to use both groupings at once.
 
 The drawback of lattice is that LATTICE DOES NOT WORK WITH THE BUILT-IN
 PLOTTING FUNCTIONS!!!
+
+## ggplot2 Graphics
+
+Documentation for ggplot2 is available at <docs.ggplot2.org>.
