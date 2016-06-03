@@ -1,0 +1,41 @@
+df = readRDS("data/random_points.rds")
+hist(df$x, freq = F, col = "gray")
+lines(density(df$x))
+?hist
+hist(df$x, freq = F, col = "gray", breaks = 30)
+lines(density(df$x))
+q = read.delim("signif.txt")
+boxplot(q$TOTAL_DEATHS)
+library("ggmap")
+map = qmap("Shanghai, CN", zoom = 4)
+map
+pts = geom_point(aes(LONGITUDE, LATITUDE, size = TOTAL_DEATHS,
+color = EQ_PRIMARY), q, alpha = 0.75)
+library("viridis")
+map + pts + scale_color_gradientn(colors = rev(magma(5)))
+head(q[order(q$TOTAL_DEATHS, decreasing = T), ])
+q_na = subset(q, is.na(TOTAL_DEATHS))
+library("lattice")
+densityplot(~ YEAR, q_na)
+range(q$TOTAL_DEATHS, na.rm = T)
+pairs(df)
+parts = readRDS("data/inventory/parts.rds")
+suplr = readRDS("data/inventory/suppliers.rds")
+sp = readRDS("data/inventory/supplier_parts.rds")
+suplr
+parts
+sp
+merge(parts, sp, by = "PartID")
+x = merge(parts, sp, by = "PartID")
+merge(x, suplr, by = "SupplierID")
+library("reshape2")
+smiths
+melt(smiths, id.vars = c("subject", "time"))
+pizza = c(1, 2, 3)
+burgers = c(1, 2, 3, 4)
+cbind(pizza, burgers)
+len = length(burgers) - length(pizza)
+len
+len = length(burgers) - length(pizza)
+pizza = c(pizza, rep(NA, len))
+cbind(pizza, burgers)
